@@ -1,0 +1,2376 @@
+:root {
+    --rentgo-accent: #d7df00;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 0.75rem 1rem;
+
+    border-radius: 0.5rem;
+
+    color: rgb(148 163 184);
+
+    transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(30 41 59);
+    color: white;
+}
+
+
+.dashboard-card {
+    background: white;
+
+    border: 1px solid rgb(226 232 240);
+
+    border-radius: 0.75rem;
+
+    padding: 1.5rem;
+}
+
+
+.dashboard-label {
+    font-size: 0.875rem;
+
+    color: rgb(100 116 139);
+
+    margin-bottom: 0.5rem;
+}
+
+
+.dashboard-value {
+    font-size: 1.75rem;
+
+    line-height: 2rem;
+
+    font-weight: 700;
+
+    color: rgb(15 23 42);
+}
+
+
+.dashboard-icon {
+    width: 3rem;
+    height: 3rem;
+
+    border-radius: 0.75rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.125rem;
+}
+
+/* Cars.html */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.3rem 0.65rem;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+.status-available {
+    background: rgb(236 253 245);
+    color: rgb(5 150 105);
+}
+
+
+.status-rented {
+    background: rgb(239 246 255);
+    color: rgb(37 99 235);
+}
+
+
+.status-reserved {
+    background: rgb(245 243 255);
+    color: rgb(124 58 237);
+}
+
+
+.status-maintenance {
+    background: rgb(255 247 237);
+    color: rgb(234 88 12);
+}
+
+
+.action-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5rem;
+
+    color: rgb(100 116 139);
+
+    transition: 0.2s ease;
+}
+
+
+.action-btn:hover {
+    background: rgb(241 245 249);
+    color: rgb(15 23 42);
+}
+
+
+.pagination-btn {
+    min-width: 2.25rem;
+    height: 2.25rem;
+
+    padding: 0 0.7rem;
+
+    border: 1px solid rgb(226 232 240);
+
+    border-radius: 0.5rem;
+
+    font-size: 0.875rem;
+
+    background: white;
+}
+
+
+.pagination-btn:hover {
+    background: rgb(248 250 252);
+}
+
+
+.form-label {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    color: rgb(51 65 85);
+}
+
+
+.form-input {
+    width: 100%;
+
+    padding: 0.7rem 0.9rem;
+
+    border: 1px solid rgb(226 232 240);
+
+    border-radius: 0.5rem;
+
+    outline: none;
+
+    background: white;
+
+    transition: 0.2s ease;
+}
+
+
+.form-input:focus {
+    border-color: rgb(59 130 246);
+
+    box-shadow: 0 0 0 3px rgb(219 234 254);
+}
+
+/*Bookings.html*/
+
+.booking-pending {
+    background: rgb(255 247 237);
+    color: rgb(217 119 6);
+}
+
+.booking-confirmed {
+    background: rgb(239 246 255);
+    color: rgb(37 99 235);
+}
+
+.booking-active {
+    background: rgb(236 253 245);
+    color: rgb(5 150 105);
+}
+
+.booking-completed {
+    background: rgb(245 243 255);
+    color: rgb(124 58 237);
+}
+
+.booking-cancelled {
+    background: rgb(254 242 242);
+    color: rgb(220 38 38);
+}
+
+.payment-paid {
+    background: rgb(236 253 245);
+    color: rgb(5 150 105);
+}
+
+.payment-partial {
+    background: rgb(255 247 237);
+    color: rgb(217 119 6);
+}
+
+.payment-unpaid {
+    background: rgb(254 242 242);
+    color: rgb(220 38 38);
+}
+
+
+/* =========================================
+   RENTGO PREMIUM PUBLIC WEBSITE
+========================================= */
+
+.rentgo-hero {
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08) 0%,
+            rgba(0, 0, 0, 0.10) 40%,
+            rgba(0, 0, 0, 0.55) 100%
+        ),
+        url("../images/hero-image.webp");
+
+    background-size: cover;
+    background-position: 50% 55%;
+}
+
+
+.hero-menu-link {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: 0.2s ease;
+}
+
+
+.hero-menu-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.10);
+}
+
+/* Hero model dropdown */
+
+#heroModelSelect option {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+
+@media (max-width: 767px) {
+
+    .rentgo-hero {
+        min-height: 820px;
+        background-position: 58% center;
+    }
+
+}
+
+
+/* =========================================
+   HERO MODEL CUSTOM DROPDOWN
+========================================= */
+
+.hero-model-dropdown {
+    position: relative;
+    width: 180px;
+    height: 100%;
+}
+
+
+/* Button */
+
+.hero-model-button {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 18px;
+
+    color: white;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.hero-model-button i {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+
+    transition: transform 0.25s ease;
+}
+
+
+/* Open chevron */
+
+.hero-model-button.open i {
+    transform: rotate(180deg);
+}
+
+
+/* Dropdown panel */
+
+.hero-model-menu {
+    position: absolute;
+
+    top: calc(100% + 14px);
+    left: 0;
+
+    width: 215px;
+
+    padding: 10px 0;
+
+    background:
+        rgba(120, 120, 120, 0.75);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 14px 40px rgba(0, 0, 0, 0.18);
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+
+/* Individual model */
+
+.hero-model-option {
+    width: 100%;
+
+    display: block;
+
+    padding:
+        9px 15px;
+
+    color: white;
+
+    background: transparent;
+    border: none;
+
+    text-align: left;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.hero-model-option:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    padding-left: 20px;
+}
+
+
+/* Selected model */
+
+.hero-model-option.active {
+    background:
+        rgba(255, 255, 255, 0.16);
+}
+
+
+/* Hide */
+
+.hero-model-menu.hidden {
+    display: none;
+}
+
+/* =========================================
+   RENTGO PUBLIC PAGE FRAME
+========================================= */
+
+html {
+    background: #000;
+}
+
+body.public-page {
+    margin: 0;
+    background: #000;
+    min-height: 100vh;
+    padding: 22px;
+}
+
+
+/* Main cropped website container */
+.public-frame {
+    width: 100%;
+    max-width: 1520px;
+
+    margin: 0 auto;
+
+    background: #fff;
+
+    border-radius: 26px;
+
+    overflow: clip;
+
+    min-height: calc(100vh - 44px);
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Dark pages such as login if needed */
+.public-frame.dark-frame {
+    background: #0b0b0b;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    body.public-page {
+        padding: 10px;
+    }
+
+    .public-frame {
+        border-radius: 18px;
+
+        min-height: calc(100vh - 20px);
+    }
+
+}
+
+/* =========================================
+   HERO BOTTOM CTA — RYDEX STYLE
+========================================= */
+
+.hero-bottom-strip {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 25;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 82px;
+
+    /* exact thin top line */
+    border-top: 1px solid rgba(255, 255, 255, 0.55);
+
+    /* glass */
+    background: rgba(35, 35, 35, 0.18);
+
+    backdrop-filter:
+        blur(18px)
+        saturate(120%);
+
+    -webkit-backdrop-filter:
+        blur(18px)
+        saturate(120%);
+}
+
+
+/* BOTH CTA ITEMS */
+
+.hero-bottom-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 82px;
+
+    padding-left: 52px;
+    padding-right: 48px;
+
+    color: rgba(255, 255, 255, 0.96);
+
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.055)
+        );
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* center dividing line */
+
+.hero-bottom-card:first-child {
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.42);
+}
+
+
+/* HOVER */
+
+.hero-bottom-card:hover {
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.hero-bottom-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    font-size: 23px;
+
+    color: white;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.hero-bottom-card:hover
+.hero-bottom-arrow {
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================
+   RIGHT CARD OUTLINE
+========================================= */
+
+.hero-bottom-card--outlined {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.72);
+
+    border-radius: 3px;
+
+    /* makes outline sit slightly inside,
+       like your reference */
+    margin:
+        -2px 30px
+        -2px 0;
+
+    height:
+        calc(82px + 4px);
+
+    padding-left: 52px;
+    padding-right: 18px;
+
+    background:
+        rgba(40, 40, 40, 0.24);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero-bottom-strip {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+
+    .hero-bottom-card {
+        height: 66px;
+
+        padding-left: 22px;
+        padding-right: 22px;
+
+        font-size: 16px;
+    }
+
+
+    .hero-bottom-card:first-child {
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.35);
+    }
+
+
+    .hero-bottom-card--outlined {
+        margin: 0;
+
+        height: 66px;
+
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+
+        border-radius: 0;
+
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+
+    .hero-bottom-arrow {
+        font-size: 20px;
+    }
+
+}
+
+/* =========================================
+   ABOUT RENTGO
+========================================= */
+
+.rentgo-about {
+    background: #050505;
+    color: #ffffff;
+
+    padding:
+        110px 55px 95px;
+}
+
+
+/* MAIN GRID */
+
+.rentgo-about-layout {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        30% 70%;
+
+    gap: 40px;
+}
+
+
+/* =========================================
+   LEFT LABEL
+========================================= */
+
+.rentgo-about-label {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding-top: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--rentgo-accent);
+
+    letter-spacing: 0.2px;
+}
+
+
+.rentgo-about-line {
+    width: 23px;
+    height: 4px;
+
+    margin-top: 8px;
+
+    background: var(--rentgo-accent);
+
+    border-radius: 50px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.rentgo-about-title {
+    max-width: 1050px;
+
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            61px
+        );
+
+    line-height: 1.18;
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+
+    color: rgba(255, 255, 255, 0.96);
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.rentgo-about-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 35px;
+
+    margin-top: 62px;
+}
+
+
+.rentgo-stat-number {
+    display: flex;
+    align-items: baseline;
+
+    font-size:
+        clamp(
+            44px,
+            4.5vw,
+            70px
+        );
+
+    line-height: 1;
+
+    font-weight: 300;
+
+    letter-spacing: -2px;
+}
+
+
+.rentgo-stat-accent {
+    color: var(--rentgo-accent);
+}
+
+
+.rentgo-stat p {
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 15px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.rentgo-about-divider {
+    width: 100%;
+    height: 1px;
+
+    margin:
+        46px 0 34px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   BOTTOM ROW
+========================================= */
+
+.rentgo-about-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.rentgo-about-description {
+    max-width: 530px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   LEARN MORE BUTTON
+========================================= */
+
+.rentgo-learn-button {
+    width: 260px;
+    height: 62px;
+
+    border: 1px solid var(--rentgo-accent);
+
+    border-radius: 15px;
+
+    padding-left: 20px;
+    padding-right: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--rentgo-accent);
+
+    font-size: 16px;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.rentgo-learn-arrow {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--rentgo-accent);
+
+    color: #000000;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.rentgo-learn-button:hover {
+    background:
+        rgba(37, 99, 235, 0.08);
+}
+
+
+.rentgo-learn-button:hover
+.rentgo-learn-arrow {
+    transform:
+        translateX(3px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .rentgo-about-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rentgo-about-stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .rentgo-about {
+        padding:
+            75px 25px;
+    }
+
+
+    .rentgo-about-stats {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            35px 20px;
+    }
+
+
+    .rentgo-about-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .rentgo-learn-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   FEATURED MODELS - STACKED
+========================================= */
+
+.rentgo-featured-models {
+    background: #050505;
+    color: white;
+
+    padding:
+        105px 55px 115px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.rentgo-models-header {
+    width: 100%;
+    max-width: 1500px;
+
+    margin:
+        0 auto 55px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.rentgo-models-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: var(--rentgo-accent);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+
+.rentgo-models-eyebrow span {
+    width: 24px;
+    height: 3px;
+
+    border-radius: 999px;
+
+    background:
+        var(--rentgo-accent);
+}
+
+
+.rentgo-models-header h2 {
+    font-size:
+        clamp(
+            38px,
+            4vw,
+            58px
+        );
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing:
+        -1.8px;
+}
+
+
+.rentgo-models-intro {
+    width: 310px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.46
+        );
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    text-align: right;
+}
+
+
+/* =========================================
+   LARGE MODEL CARD
+========================================= */
+
+.rentgo-featured-card {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    max-width: 1400px;
+
+    height: 520px;
+
+    margin:
+        0 auto 20px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    color: white;
+
+    text-decoration: none;
+
+    background: #151515;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.rentgo-featured-card:hover {
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(
+            215,
+            223,
+            0,
+            0.45
+        );
+}
+
+
+/* IMAGE */
+
+.rentgo-featured-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.rentgo-featured-card:hover
+.rentgo-featured-image {
+    transform:
+        scale(1.025);
+}
+
+
+/* OVERLAY */
+
+.rentgo-featured-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.58) 0%,
+            rgba(0, 0, 0, 0.18) 55%,
+            rgba(0, 0, 0, 0.06) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.58) 0%,
+            rgba(0, 0, 0, 0) 55%
+        );
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.rentgo-featured-brand {
+    position: absolute;
+
+    top: 38px;
+    left: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    z-index: 2;
+}
+
+
+.rentgo-featured-brand i {
+    color:
+        var(--rentgo-accent);
+}
+
+
+/* =========================================
+   MODEL NAME
+========================================= */
+
+.rentgo-featured-name {
+    position: absolute;
+
+    left: 38px;
+
+    top: 46%;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 2;
+
+    font-size:
+        clamp(
+            42px,
+            5vw,
+            70px
+        );
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing:
+        -2px;
+}
+
+
+/* =========================================
+   SPECS
+========================================= */
+
+.rentgo-featured-specs {
+    position: absolute;
+
+    left: 38px;
+    bottom: 32px;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(110px, auto));
+
+    gap: 42px;
+}
+
+
+.rentgo-featured-specs div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.rentgo-featured-specs span {
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.60
+        );
+
+    font-size: 12px;
+}
+
+
+.rentgo-featured-specs strong {
+    font-size: 16px;
+
+    font-weight: 500;
+
+    color: white;
+}
+
+
+/* =========================================
+   SEE ALL MODELS
+========================================= */
+
+.rentgo-models-footer {
+    width: 100%;
+    max-width: 1400px;
+
+    margin:
+        35px auto 0;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.rentgo-see-models {
+    width: 250px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0 5px 0 20px;
+
+    border:
+        1px solid
+        var(--rentgo-accent);
+
+    border-radius: 14px;
+
+    color:
+        var(--rentgo-accent);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition:
+        background 0.25s ease;
+}
+
+
+.rentgo-see-models:hover {
+    background:
+        rgba(
+            215,
+            223,
+            0,
+            0.07
+        );
+}
+
+
+.rentgo-see-models-arrow {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        var(--rentgo-accent);
+
+    color: #000;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.rentgo-see-models:hover
+.rentgo-see-models-arrow {
+    transform:
+        translateX(2px);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (
+    max-width: 900px
+) {
+
+    .rentgo-models-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .rentgo-models-intro {
+        width: 100%;
+
+        text-align: left;
+
+        max-width: 500px;
+    }
+
+
+    .rentgo-featured-card {
+        height: 430px;
+    }
+
+
+    .rentgo-featured-specs {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            18px 35px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (
+    max-width: 640px
+) {
+
+    .rentgo-featured-models {
+        padding:
+            75px 20px 85px;
+    }
+
+
+    .rentgo-featured-card {
+        height: 460px;
+
+        border-radius: 18px;
+    }
+
+
+    .rentgo-featured-image {
+        object-position: center;
+    }
+
+
+    .rentgo-featured-brand {
+        top: 24px;
+        left: 22px;
+    }
+
+
+    .rentgo-featured-name {
+        left: 22px;
+
+        top: 48%;
+
+        font-size: 42px;
+    }
+
+
+    .rentgo-featured-specs {
+        left: 22px;
+        right: 22px;
+        bottom: 24px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+
+    .rentgo-models-footer {
+        justify-content: stretch;
+    }
+
+
+    .rentgo-see-models {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
+   HOW IT WORKS - CORRECTED
+========================================= */
+
+.rentgo-how {
+    background: #050505;
+    color: #fff;
+
+    padding: 110px 55px 130px;
+}
+
+
+.rentgo-how-grid {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(420px, 0.95fr)
+        80px
+        minmax(560px, 1.15fr);
+
+    gap: 34px;
+
+    /* IMPORTANT */
+    align-items: stretch;
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.rentgo-how-left {
+    position: relative;
+
+    /* allows sticky content to travel
+       through entire section */
+    min-height: 100%;
+}
+
+
+.rentgo-how-sticky {
+    position: sticky;
+
+    top: 95px;
+
+    padding-bottom: 60px;
+}
+
+
+.rentgo-how-eyebrow {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 22px;
+
+    color: var(--rentgo-accent);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.rentgo-how-eyebrow span {
+    width: 24px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: var(--rentgo-accent);
+}
+
+
+.rentgo-how-left h2 {
+    max-width: 620px;
+
+    font-size: clamp(
+        42px,
+        4vw,
+        62px
+    );
+
+    line-height: 1.12;
+
+    letter-spacing: -2px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   BOOK NOW BUTTON
+========================================= */
+
+.rentgo-how-book {
+    width: 245px;
+    height: 60px;
+
+    margin-top: 40px;
+
+    padding: 0 5px 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border:
+        1px solid
+        var(--rentgo-accent);
+
+    border-radius: 14px;
+
+    color:
+        var(--rentgo-accent);
+
+    text-decoration: none;
+}
+
+
+.rentgo-how-book-arrow {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        var(--rentgo-accent);
+
+    color: #000;
+}
+
+
+/* =========================================
+   CENTER PROGRESS
+========================================= */
+
+.rentgo-how-progress {
+    position: relative;
+
+    height: 100%;
+}
+
+
+.rentgo-how-progress-sticky {
+    position: sticky;
+
+    top: 105px;
+
+    height: 610px;
+
+    width: 100%;
+}
+
+
+/* grey base line */
+
+.rentgo-how-track {
+    position: absolute;
+
+    left: 50%;
+    top: 10px;
+    bottom: 10px;
+
+    width: 3px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(255, 255, 255, 0.16);
+}
+
+
+/* lime progress line */
+
+.rentgo-how-fill {
+    position: absolute;
+
+    left: 50%;
+    top: 10px;
+
+    width: 3px;
+    height: 0;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        var(--rentgo-accent);
+
+    transition:
+        height 0.12s linear;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.rentgo-how-dot {
+    position: absolute;
+
+    left: 50%;
+
+    width: 18px;
+    height: 18px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background: #303030;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.22);
+
+    z-index: 3;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.rentgo-how-dot[data-progress-dot="0"] {
+    top: 10px;
+}
+
+
+.rentgo-how-dot[data-progress-dot="1"] {
+    top: 33.33%;
+}
+
+
+.rentgo-how-dot[data-progress-dot="2"] {
+    top: 66.66%;
+}
+
+
+.rentgo-how-dot[data-progress-dot="3"] {
+    bottom: 10px;
+}
+
+
+.rentgo-how-dot.active {
+    background:
+        var(--rentgo-accent);
+
+    border-color:
+        var(--rentgo-accent);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(215,223,0,0.08);
+}
+
+
+/* =========================================
+   RIGHT STEP CARDS
+========================================= */
+
+.rentgo-how-steps {
+    display: flex;
+    flex-direction: column;
+
+    gap: 34px;
+
+    padding-bottom: 50px;
+}
+
+
+.rentgo-how-card {
+    min-height: 205px;
+
+    padding:
+        28px 30px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.14);
+
+    background:
+        rgba(255,255,255,0.055);
+
+    opacity: 0.42;
+
+    transform:
+        translateY(14px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.rentgo-how-card.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    border-color:
+        rgba(215,223,0,0.48);
+
+    background:
+        rgba(255,255,255,0.075);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,0.22);
+}
+
+
+.rentgo-how-icon {
+    color:
+        var(--rentgo-accent);
+
+    font-size: 27px;
+
+    margin-bottom: 22px;
+}
+
+
+.rentgo-how-card h3 {
+    font-size: 25px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.5px;
+}
+
+
+.rentgo-how-card p {
+    margin-top: 12px;
+
+    max-width: 650px;
+
+    color:
+        rgba(255,255,255,0.48);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .rentgo-how-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rentgo-how-sticky {
+        position: relative;
+        top: auto;
+    }
+
+
+    .rentgo-how-progress {
+        display: none;
+    }
+
+
+    .rentgo-how-card {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+
+@media (max-width: 640px) {
+
+    .rentgo-how {
+        padding:
+            75px 22px 90px;
+    }
+
+
+    .rentgo-how-left h2 {
+        font-size: 39px;
+    }
+
+
+    .rentgo-how-book {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   RENTGO FOOTER
+========================================= */
+
+.rentgo-footer {
+    background: #050505;
+    color: white;
+
+    padding:
+        90px 55px 32px;
+}
+
+
+.rentgo-footer-inner {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.rentgo-footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2.1fr
+        0.25fr
+        0.9fr
+        0.9fr
+        0.9fr
+        1fr;
+
+    gap: 42px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.rentgo-footer-brand h2 {
+    font-size: 34px;
+
+    font-weight: 600;
+
+    letter-spacing: -1px;
+}
+
+
+.rentgo-footer-brand p {
+    max-width: 360px;
+
+    margin-top: 18px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================
+   BOOK BUTTON
+========================================= */
+
+.rentgo-footer-book {
+    width: 260px;
+    height: 62px;
+
+    margin-top: 30px;
+
+    padding:
+        0 5px 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.70);
+
+    border-radius: 14px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.rentgo-footer-book:hover {
+    border-color:
+        var(--rentgo-accent);
+
+    background:
+        rgba(215, 223, 0, 0.05);
+}
+
+
+.rentgo-footer-book-arrow {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: white;
+
+    color: black;
+
+    font-size: 18px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.rentgo-footer-book:hover
+.rentgo-footer-book-arrow {
+    background:
+        var(--rentgo-accent);
+
+    transform:
+        translateX(2px);
+}
+
+
+/* =========================================
+   LIME DOT
+========================================= */
+
+.rentgo-footer-dot {
+    width: 18px;
+    height: 18px;
+
+    margin-top: 25px;
+
+    border-radius: 50%;
+
+    background:
+        var(--rentgo-accent);
+}
+
+
+/* =========================================
+   COLUMNS
+========================================= */
+
+.rentgo-footer-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+.rentgo-footer-heading {
+    margin-bottom: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.48);
+
+    font-size: 14px;
+}
+
+
+.rentgo-footer-column a {
+    width: fit-content;
+
+    color:
+        rgba(255, 255, 255, 0.94);
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.rentgo-footer-column a:hover {
+    color:
+        var(--rentgo-accent);
+}
+
+
+.rentgo-footer-contact p:not(
+    .rentgo-footer-heading
+) {
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.rentgo-footer-divider {
+    width: 100%;
+    height: 1px;
+
+    margin:
+        80px 0 28px;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.rentgo-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    color:
+        rgba(255, 255, 255, 0.44);
+
+    font-size: 13px;
+}
+
+
+.rentgo-footer-bottom-links {
+    display: flex;
+    align-items: center;
+
+    gap: 26px;
+}
+
+
+.rentgo-footer-bottom-links a {
+    color:
+        rgba(255, 255, 255, 0.72);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.rentgo-footer-bottom-links a:hover {
+    color:
+        var(--rentgo-accent);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .rentgo-footer-grid {
+        grid-template-columns:
+            1.6fr
+            1fr
+            1fr;
+    }
+
+
+    .rentgo-footer-dot {
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .rentgo-footer {
+        padding:
+            70px 24px 28px;
+    }
+
+
+    .rentgo-footer-grid {
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            45px 25px;
+    }
+
+
+    .rentgo-footer-brand {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .rentgo-footer-book {
+        width: 100%;
+    }
+
+
+    .rentgo-footer-divider {
+        margin-top:
+            55px;
+    }
+
+
+    .rentgo-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+/* HERO LABEL */
+
+.rentgo-hero-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--rentgo-accent);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-left: 0;
+    transform: translateY(55px);
+}
+
+
+.rentgo-hero-label span {
+    width: 24px;
+    height: 4px;
+
+    border-radius: 999px;
+
+    background: var(--rentgo-accent);
+}
+
+
+/* HERO COPY */
+
+.rentgo-hero-copy {
+    margin-left: 245px;
+    margin-top: 14px;
+}
+
+
+.rentgo-hero-copy h1 {
+    font-size: clamp(52px, 5vw, 78px);
+
+    line-height: 1.02;
+
+    font-weight: 500;
+
+    letter-spacing: -2.5px;
+}
+
+
+.rentgo-hero-copy p {
+    max-width: 560px;
+
+    margin-top: 22px;
+
+    color: rgba(255,255,255,0.62);
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+
+    .rentgo-hero-copy {
+        margin-left: 0;
+        margin-top: 18px;
+    }
+
+    .rentgo-hero-copy h1 {
+        font-size: 54px;
+    }
+
+}
+/* RentGo — public and admin colour system */
+body.rg-theme {
+    --rg-bg: #080808;
+    --rg-panel: #141414;
+    --rg-raised: #1c1c1c;
+    --rg-line: #303030;
+    --rg-text: #f5f5f5;
+    --rg-muted: #a3a3a3;
+    --rg-accent: var(--rentgo-accent, #d7df00);
+    background: var(--rg-bg) !important;
+    color: var(--rg-text) !important;
+    color-scheme: dark;
+    accent-color: var(--rg-accent);
+}
+body.rg-theme.public-page { background: #000 !important; }
+body.rg-theme .public-frame { background: var(--rg-bg); color: var(--rg-text); }
+.rg-theme .bg-white { background-color: var(--rg-panel) !important; }
+.rg-theme .bg-slate-50 { background-color: #191919 !important; }
+.rg-theme .bg-slate-100 { background-color: #202020 !important; }
+.rg-theme .bg-slate-950 { background-color: #0a0a0a !important; }
+.rg-theme .text-slate-900, .rg-theme .text-slate-800, .rg-theme .text-slate-700 { color: var(--rg-text) !important; }
+.rg-theme .text-slate-600, .rg-theme .text-slate-500, .rg-theme .text-slate-400, .rg-theme .text-slate-300 { color: var(--rg-muted) !important; }
+.rg-theme .border-slate-100, .rg-theme .border-slate-200, .rg-theme .border-slate-300, .rg-theme .border-slate-800, .rg-theme .border-blue-100 { border-color: var(--rg-line) !important; }
+.rg-theme .divide-slate-100 > :not([hidden]) ~ :not([hidden]) { border-color: var(--rg-line) !important; }
+.rg-theme .hover\:bg-slate-50:hover, .rg-theme .hover\:bg-slate-100:hover, .rg-theme .hover\:bg-slate-50\/5:hover { background-color: #222 !important; }
+.rg-theme .hover\:text-slate-600:hover { color: #fff !important; }
+.rg-theme .bg-blue-600, .rg-theme .bg-blue-500 { background-color: var(--rg-accent) !important; color: #111 !important; }
+.rg-theme .hover\:bg-blue-700:hover, .rg-theme .hover\:bg-blue-600:hover { background-color: #e7ee45 !important; color: #111 !important; }
+.rg-theme .bg-blue-50 { background-color: rgba(215,223,0,.09) !important; }
+.rg-theme .bg-blue-600\/20 { background-color: rgba(215,223,0,.09) !important; }
+.rg-theme .bg-indigo-500\/10 { background-color: rgba(215,223,0,.04) !important; }
+.rg-theme .text-blue-400, .rg-theme .text-blue-600, .rg-theme .text-blue-700, .rg-theme .text-blue-900,
+.rg-theme .hover\:text-blue-600:hover, .rg-theme .hover\:text-blue-700:hover { color: var(--rg-accent) !important; }
+.rg-theme .dashboard-card { background: var(--rg-panel); border: 1px solid var(--rg-line); border-radius: 14px; }
+.rg-theme .dashboard-value { color: var(--rg-text); }
+.rg-theme .dashboard-label, .rg-theme .form-label { color: var(--rg-muted); }
+.rg-theme .form-input, .rg-theme input:not([type=checkbox]):not([type=radio]):not([type=hidden]), .rg-theme select, .rg-theme textarea { background-color: #1b1b1b !important; color: var(--rg-text) !important; border-color: #363636 !important; }
+.rg-theme input::placeholder, .rg-theme textarea::placeholder { color: #898989; }
+.rg-theme select option { background: #1b1b1b; color: #f5f5f5; }
+.rg-theme .form-input:focus, .rg-theme input:focus, .rg-theme select:focus, .rg-theme textarea:focus { border-color: var(--rg-accent) !important; outline: none; box-shadow: 0 0 0 3px rgba(215,223,0,.12) !important; }
+.rg-theme a:focus-visible, .rg-theme button:focus-visible { outline: 2px solid var(--rg-accent); outline-offset: 3px; }
+.rg-theme .action-btn { color: #b4b4b4; }
+.rg-theme .action-btn:hover { background: #252525; color: #fff; }
+.rg-theme .pagination-btn { background: #1a1a1a; border-color: #383838; color: #eee; }
+.rg-theme .pagination-btn:hover { background: #2b2b2b; }
+.rg-theme .bg-emerald-50, .rg-theme .bg-emerald-100 { background-color: rgba(34,197,94,.13) !important; }
+.rg-theme .bg-amber-50 { background-color: rgba(245,158,11,.13) !important; }
+.rg-theme .bg-red-50 { background-color: rgba(239,68,68,.13) !important; }
+.rg-theme .bg-violet-50 { background-color: rgba(167,139,250,.13) !important; }
+.rg-theme .text-emerald-600, .rg-theme .text-emerald-700 { color: #86efac !important; }
+.rg-theme .text-amber-600, .rg-theme .text-amber-700 { color: #fcd34d !important; }
+.rg-theme .text-red-500, .rg-theme .text-red-600, .rg-theme .text-red-700 { color: #fca5a5 !important; }
+.rg-theme .text-violet-600 { color: #c4b5fd !important; }
+.rg-theme .border-red-200 { border-color: #713333 !important; }
+.rg-theme .border-emerald-200 { border-color: #245b38 !important; }
+.rg-theme .status-badge { background: #242424; color: #e5e5e5; }
+.rg-theme .status-available, .rg-theme .booking-active, .rg-theme .payment-paid { background: #183523; color: #86efac; }
+.rg-theme .status-reserved, .rg-theme .booking-confirmed { background: #30320d; color: #e4eb65; }
+.rg-theme .status-rented, .rg-theme .booking-completed { background: #28303d; color: #bfdbfe; }
+.rg-theme .status-maintenance, .rg-theme .booking-pending, .rg-theme .payment-partial { background: #392c16; color: #fcd34d; }
+.rg-theme .booking-cancelled, .rg-theme .payment-unpaid { background: #3a2020; color: #fca5a5; }
+.rg-theme .rg-brand-mark { display: none !important; }
+.rg-theme .rg-brand-name { font-weight: 650; letter-spacing: -.045em; }
+.rg-theme .public-frame > header { background: #101010 !important; }
+.rg-theme .public-frame > footer { background: #080808 !important; border-top: 1px solid var(--rg-line); }
+.rg-theme .public-frame > .min-h-screen { min-height: calc(100vh - 44px); }
+.rg-theme.rg-recovery .public-frame { display: grid; place-items: center; padding: 28px; }
+.rg-theme.rg-recovery .public-frame > .max-w-md { margin: 0 auto; }
+.rg-theme.rg-admin { background: #090909 !important; }
+.rg-theme.rg-admin > div > aside { border-right: 1px solid var(--rg-line); }
+.rg-admin .sidebar-link { color: #b2b2b2; }
+.rg-admin .sidebar-link:hover { background: #1e1e1e; color: #fff; }
+.rg-admin table thead { background: #1a1a1a !important; color: #b5b5b5; }
+.rg-admin table tbody tr { border-color: #2d2d2d !important; }
+.rg-admin table tbody tr:hover { background-color: #1c1c1c; }
+.rg-admin .fixed.inset-0 > .bg-white { border: 1px solid #363636; }
+.rg-admin .shadow-sm, .rg-theme .shadow-sm { box-shadow: none; }
+@media (max-width: 768px) {
+    .rg-theme .public-frame > .min-h-screen { min-height: calc(100vh - 20px); }
+    .rg-theme.rg-recovery .public-frame { padding: 16px; }
+}
+/* Maintain the homepage layout and interactions; match the remaining blue hover. */
+.rentgo-hero .hover\:bg-blue-600:hover { background: var(--rentgo-accent); color: #111; }
+/* Auth visibility is independent of glass/card display styling. */
+[data-auth-guest].hidden, [data-auth-user].hidden, [data-customer-guest].hidden, [data-customer-account].hidden { display: none !important; }
+@media print {
+    body.rg-admin { background: white !important; color: black !important; color-scheme: light; }
+    .rg-admin .bg-white, .rg-admin .dashboard-card { background: white !important; color: black !important; }
+    .rg-admin .dashboard-value, .rg-admin .text-slate-900, .rg-admin .text-slate-800, .rg-admin .text-slate-700 { color: black !important; }
+    .rg-admin .text-slate-500, .rg-admin .dashboard-label { color: #555 !important; }
+}

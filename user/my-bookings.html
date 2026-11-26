@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RentGo | My Bookings</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body class="rg-theme rg-customer public-page">
+
+    <div class="public-frame">
+
+    <!-- Navbar -->
+    <header
+        class="bg-white border-b border-slate-200 sticky top-0 z-40">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <a
+                href="../index.html"
+                class="flex items-center gap-3">
+
+                <div
+                    class="rg-brand-mark w-11 h-11 bg-blue-600 text-white rounded-xl flex items-center justify-center">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="rg-brand-name text-xl font-bold text-slate-900">
+                        RentGo
+                    </h1>
+
+                    <p class="text-xs text-slate-500">
+                        Drive Your Way
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <nav
+                class="hidden lg:flex items-center gap-8 text-sm font-medium">
+
+                <a
+                    href="../index.html"
+                    class="text-slate-600 hover:text-blue-600">
+
+                    Home
+
+                </a>
+
+                <a
+                    href="cars.html"
+                    class="text-slate-600 hover:text-blue-600">
+
+                    Cars
+
+                </a>
+
+                <a
+                    href="my-bookings.html"
+                    class="text-blue-600">
+
+                    My Bookings
+
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Header -->
+    <section
+        class="bg-white border-b border-slate-200">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+
+            <p
+                class="text-sm font-semibold text-blue-600 mb-2">
+
+                RENTAL HISTORY
+
+            </p>
+
+            <h2
+                class="text-3xl font-bold text-slate-900">
+
+                My Bookings
+
+            </h2>
+
+            <p
+                class="text-slate-500 mt-2">
+
+                Track your current and previous RentGo reservations.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main -->
+    <main
+        class="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+
+        <!-- Customer Identification -->
+        
+
+
+        <!-- Customer Summary -->
+        <div
+            id="customerSummary"
+            class="hidden bg-white border border-slate-200 rounded-2xl p-6 mb-8">
+
+            <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-5">
+
+                <div>
+
+                    <p
+                        class="text-xs text-slate-400 uppercase font-semibold">
+
+                        Customer
+
+                    </p>
+
+                    <h3
+                        id="bookingCustomerName"
+                        class="text-xl font-bold text-slate-900 mt-1">
+
+                        -
+
+                    </h3>
+
+                    <p
+                        id="bookingCustomerPhone"
+                        class="text-sm text-slate-500 mt-1">
+
+                        -
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <p
+                        class="text-xs text-slate-400 uppercase font-semibold">
+
+                        Total Bookings
+
+                    </p>
+
+                    <p
+                        id="bookingCustomerCount"
+                        class="text-2xl font-bold text-slate-900 mt-1">
+
+                        0
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Booking List -->
+        <div
+            id="myBookingsContainer"
+            class="space-y-5">
+
+            <div
+                class="bg-white border border-slate-200 rounded-2xl py-16 text-center">
+
+                <i
+                    class="fa-solid fa-spinner fa-spin text-2xl text-blue-600">
+                </i>
+
+                <p class="text-slate-500 mt-4">
+                    Loading your bookings...
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/config/store.js"></script>
+<script
+        src="../js/user-my-bookings.js">
+    </script>
+
+    <script
+        src="../js/guards/customer-guard.js">
+    </script>
+
+    </div>
+
+</body>
+
+</html>

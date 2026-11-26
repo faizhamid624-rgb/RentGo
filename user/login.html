@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RentGo | Customer Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body class="rg-theme rg-customer bg-slate-50 min-h-screen">
+
+    <header class="bg-white border-b border-slate-200">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <a
+                href="home.html"
+                class="flex items-center gap-3">
+
+                <div
+                    class="rg-brand-mark w-11 h-11 bg-blue-600 text-white rounded-xl flex items-center justify-center">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="rg-brand-name text-xl font-bold text-slate-900">
+                        RentGo
+                    </h1>
+
+                    <p class="text-xs text-slate-500">
+                        Drive Your Way
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a
+                href="register.html"
+                class="text-sm font-semibold text-blue-600">
+
+                Create Account
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main
+        class="max-w-md mx-auto px-6 py-16">
+
+        <div
+            class="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 shadow-sm">
+
+            <div class="text-center mb-8">
+
+                <div
+                    class="w-14 h-14 bg-blue-50 text-blue-600 mx-auto rounded-2xl flex items-center justify-center text-xl">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </div>
+
+                <h2
+                    class="text-3xl font-bold text-slate-900 mt-5">
+
+                    Welcome back
+
+                </h2>
+
+                <p class="text-slate-500 mt-2">
+
+                    Sign in to your RentGo account.
+
+                </p>
+
+            </div>
+
+
+            <div
+                id="customerLoginError"
+                class="hidden bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm mb-5">
+
+                <i class="fa-solid fa-circle-exclamation mr-2"></i>
+
+                <span></span>
+
+            </div>
+
+
+            <form id="customerLoginForm">
+
+                <div class="mb-5">
+
+                    <label class="form-label">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerLoginEmail"
+                        class="form-input"
+                        placeholder="your@email.com"
+                        required>
+
+                </div>
+
+
+                <div class="mb-7">
+
+                    <label class="form-label">
+                        Password
+                    </label>
+
+                    <a
+                        href="../forgot-password.html"
+                        class="text-sm font-semibold text-blue-600 hover:text-blue-700">
+
+                        Forgot password?
+
+                    </a>
+
+                    <div class="relative">
+
+                        <input
+                            type="password"
+                            id="customerLoginPassword"
+                            class="form-input pr-12"
+                            placeholder="Enter password"
+                            required>
+
+                        <button
+                            type="button"
+                            id="toggleCustomerPassword"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+
+                            <i
+                                id="customerPasswordIcon"
+                                class="fa-regular fa-eye">
+                            </i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3.5 rounded-xl font-semibold">
+
+                    Sign In
+
+                </button>
+
+            </form>
+
+
+            <p
+                class="text-center text-sm text-slate-500 mt-7">
+
+                Don't have an account?
+
+                <a
+                    href="register.html"
+                    class="font-semibold text-blue-600">
+
+                    Create Account
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/config/store.js"></script>
+<script
+        src="../js/customer-login.js">
+    </script>
+
+</body>
+</html>

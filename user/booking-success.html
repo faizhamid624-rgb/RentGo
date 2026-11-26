@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RentGo | Booking Confirmed</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body class="rg-theme rg-customer public-page">
+
+    <div class="public-frame">
+
+    <!-- Navbar -->
+    <header class="bg-white border-b border-slate-200">
+
+        <div
+            class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+
+            <a href="../index.html" class="flex items-center gap-3">
+
+                <div
+                    class="rg-brand-mark w-11 h-11 bg-blue-600 text-white rounded-xl flex items-center justify-center">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="rg-brand-name text-xl font-bold text-slate-900">
+                        RentGo
+                    </h1>
+
+                    <p class="text-xs text-slate-500">
+                        Drive Your Way
+                    </p>
+
+                </div>
+
+            </a>
+
+            <a
+                href="my-bookings.html"
+                class="text-sm font-medium text-slate-600 hover:text-blue-600">
+
+                My Bookings
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+    <main
+        class="max-w-3xl mx-auto px-6 py-16">
+
+        <!-- Success -->
+        <div class="text-center">
+
+            <div
+                class="w-20 h-20 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <p
+                class="text-sm font-semibold text-emerald-600 mt-6">
+
+                BOOKING SUBMITTED
+
+            </p>
+
+            <h2
+                class="text-3xl font-bold text-slate-900 mt-2">
+
+                Your booking has been received
+
+            </h2>
+
+            <p
+                class="text-slate-500 mt-3 max-w-xl mx-auto">
+
+                RentGo has received your rental request.
+                Your booking will remain pending until it is reviewed and confirmed.
+
+            </p>
+
+        </div>
+
+
+        <!-- Booking Card -->
+        <div
+            class="bg-white border border-slate-200 rounded-2xl mt-10 overflow-hidden">
+
+            <div
+                class="px-7 py-5 border-b border-slate-200 flex items-center justify-between">
+
+                <div>
+
+                    <p
+                        class="text-xs uppercase text-slate-400 font-semibold">
+
+                        Booking Reference
+
+                    </p>
+
+                    <h3
+                        id="successBookingCode"
+                        class="text-xl font-bold text-slate-900 mt-1">
+
+                        Loading...
+
+                    </h3>
+
+                </div>
+
+                <span
+                    id="successBookingStatus"
+                    class="status-badge booking-pending">
+
+                    Pending
+
+                </span>
+
+            </div>
+
+
+            <div class="p-7">
+
+                <div class="grid md:grid-cols-2 gap-6">
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Vehicle
+                        </p>
+
+                        <p
+                            id="successVehicle"
+                            class="font-semibold text-slate-900 mt-1">
+
+                            -
+
+                        </p>
+
+                        <p
+                            id="successPlate"
+                            class="text-sm text-slate-500 mt-1">
+
+                            -
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Customer
+                        </p>
+
+                        <p
+                            id="successCustomer"
+                            class="font-semibold text-slate-900 mt-1">
+
+                            -
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Pickup Date
+                        </p>
+
+                        <p
+                            id="successPickup"
+                            class="font-semibold text-slate-900 mt-1">
+
+                            -
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Return Date
+                        </p>
+
+                        <p
+                            id="successReturn"
+                            class="font-semibold text-slate-900 mt-1">
+
+                            -
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Rental Duration
+                        </p>
+
+                        <p
+                            id="successDays"
+                            class="font-semibold text-slate-900 mt-1">
+
+                            -
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <p class="text-xs text-slate-400">
+                            Total Rental
+                        </p>
+
+                        <p
+                            id="successTotal"
+                            class="text-xl font-bold text-slate-900 mt-1">
+
+                            RM 0.00
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Information -->
+        <div
+            class="bg-blue-50 border border-blue-100 rounded-xl p-5 mt-6">
+
+            <div class="flex gap-4">
+
+                <i
+                    class="fa-solid fa-circle-info text-blue-600 mt-1">
+                </i>
+
+                <div>
+
+                    <p class="font-semibold text-blue-900">
+                        What happens next?
+                    </p>
+
+                    <p
+                        class="text-sm text-blue-700 mt-1 leading-relaxed">
+
+                        RentGo staff will review your booking.
+                        Once approved, the booking status will be updated
+                        and can be viewed from My Bookings.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Actions -->
+        <div
+            class="flex flex-col sm:flex-row justify-center gap-3 mt-8">
+
+            <a
+                href="my-bookings.html"
+                class="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">
+
+                <i class="fa-regular fa-calendar-check"></i>
+
+                View My Bookings
+
+            </a>
+
+            <a
+                href="cars.html"
+                class="inline-flex justify-center items-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 px-6 py-3 rounded-lg font-semibold">
+
+                Browse More Cars
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/config/store.js"></script>
+<script
+        src="../js/user-booking-success.js">
+    </script>
+
+    <script
+        src="../js/guards/customer-guard.js">
+    </script>
+
+    </div>
+
+</body>
+
+</html>

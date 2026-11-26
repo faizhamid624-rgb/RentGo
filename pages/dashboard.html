@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentGo | Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+</head>
+<body class="rg-theme rg-admin bg-slate-50 text-slate-800">
+<div class="min-h-screen flex">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-slate-950 text-white fixed inset-y-0 left-0 hidden lg:flex flex-col">
+<div class="h-20 px-6 flex items-center border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="rg-brand-mark w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+<i class="fa-solid fa-car-side"></i>
+</div>
+<div>
+<h1 class="rg-brand-name font-bold text-lg">
+                            RentGo
+                        </h1>
+<p class="text-xs text-slate-400">
+                            Admin Portal
+                        </p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-1">
+<a class="sidebar-link bg-blue-600 text-white" href="dashboard.html">
+<i class="fa-solid fa-chart-line w-5"></i>
+<span>Dashboard</span>
+</a>
+<a class="sidebar-link" href="cars.html">
+<i class="fa-solid fa-car w-5"></i>
+<span>Fleet</span>
+</a>
+<a class="sidebar-link" href="bookings.html">
+<i class="fa-regular fa-calendar-check w-5"></i>
+<span>Bookings</span>
+</a>
+<a class="sidebar-link" href="customers.html">
+<i class="fa-solid fa-users w-5"></i>
+<span>Customers</span>
+</a>
+<a class="sidebar-link" href="payments.html">
+<i class="fa-solid fa-credit-card w-5"></i>
+<span>Payments</span>
+</a>
+<a class="sidebar-link" href="maintenance.html">
+<i class="fa-solid fa-screwdriver-wrench w-5"></i>
+<span>Maintenance</span>
+</a>
+<a class="sidebar-link" href="reports.html">
+<i class="fa-solid fa-chart-pie w-5"></i>
+<span>Reports</span>
+</a>
+
+</nav>
+<div class="px-4 pb-5">
+<button class="sidebar-link w-full text-left" data-logout="" type="button">
+<i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+<span>
+                        Logout
+                    </span>
+</button>
+</div>
+</aside>
+<!-- MAIN -->
+<div class="flex-1 lg:ml-64">
+<!-- TOPBAR -->
+<header class="h-20 bg-white border-b border-slate-200 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+<div>
+<h2 class="font-bold text-xl text-slate-900">
+                        Dashboard
+                    </h2>
+<p class="text-sm text-slate-500">
+                        Overview of RentGo operations
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
+<i class="fa-regular fa-user"></i>
+</div>
+<div class="hidden sm:block">
+<p class="text-sm font-semibold" data-admin-name="">
+
+                            Administrator
+
+                        </p>
+<p class="text-xs text-slate-400">
+                            Administrator
+                        </p>
+</div>
+</div>
+</header>
+<main class="p-6 lg:p-8">
+<!-- PAGE TITLE -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-7">
+<div>
+<h3 class="text-2xl font-bold text-slate-900">
+                            Welcome back
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Here's what's happening with RentGo today.
+                        </p>
+</div>
+<a class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-sm font-semibold" href="bookings.html">
+<i class="fa-solid fa-plus"></i>
+
+                        New Booking
+
+                    </a>
+</div>
+<!-- KPI CARDS -->
+<div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-7">
+<!-- Total Vehicles -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Total Vehicles
+                                </p>
+<h4 class="dashboard-value" id="dashboardTotalVehicles">
+
+                                    0
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2">
+                                    Registered fleet
+                                </p>
+</div>
+<div class="dashboard-icon bg-blue-50 text-blue-600">
+<i class="fa-solid fa-car"></i>
+</div>
+</div>
+</div>
+<!-- Available -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Available Cars
+                                </p>
+<h4 class="dashboard-value" id="dashboardAvailableVehicles">
+
+                                    0
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2">
+                                    Ready for rental
+                                </p>
+</div>
+<div class="dashboard-icon bg-emerald-50 text-emerald-600">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+</div>
+</div>
+<!-- Active -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Active Rentals
+                                </p>
+<h4 class="dashboard-value" id="dashboardActiveRentals">
+
+                                    0
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2">
+                                    Currently rented
+                                </p>
+</div>
+<div class="dashboard-icon bg-violet-50 text-violet-600">
+<i class="fa-solid fa-key"></i>
+</div>
+</div>
+</div>
+<!-- Monthly Revenue -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Monthly Revenue
+                                </p>
+<h4 class="dashboard-value" id="dashboardMonthlyRevenue">
+
+                                    RM 0.00
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2" id="dashboardRevenueMonth">
+
+                                    This month
+
+                                </p>
+</div>
+<div class="dashboard-icon bg-amber-50 text-amber-600">
+<i class="fa-solid fa-wallet"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- REVENUE + FLEET -->
+<div class="grid xl:grid-cols-3 gap-6 mb-6">
+<!-- Revenue -->
+<section class="xl:col-span-2 bg-white border border-slate-200 rounded-2xl p-6">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="font-bold text-lg text-slate-900">
+                                    Revenue Overview
+                                </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                    Revenue collected over the last 6 months.
+                                </p>
+</div>
+<a class="text-sm font-semibold text-blue-600" href="reports.html">
+
+                                View Reports
+
+                            </a>
+</div>
+<div class="h-72">
+<canvas id="dashboardRevenueChart"></canvas>
+</div>
+</section>
+<!-- Fleet Status -->
+<section class="bg-white border border-slate-200 rounded-2xl p-6">
+<div class="mb-6">
+<h3 class="font-bold text-lg text-slate-900">
+                                Fleet Status
+                            </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                Current vehicle availability
+                            </p>
+</div>
+<!-- Available -->
+<div class="mb-5">
+<div class="flex justify-between text-sm mb-2">
+<span>
+                                    Available
+                                </span>
+<span class="font-semibold" id="fleetAvailableCount">
+
+                                    0
+
+                                </span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 rounded-full" id="fleetAvailableBar" style="width: 0%">
+</div>
+</div>
+</div>
+<!-- Reserved -->
+<div class="mb-5">
+<div class="flex justify-between text-sm mb-2">
+<span>
+                                    Reserved
+                                </span>
+<span class="font-semibold" id="fleetReservedCount">
+
+                                    0
+
+                                </span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-amber-500 rounded-full" id="fleetReservedBar" style="width: 0%">
+</div>
+</div>
+</div>
+<!-- Rented -->
+<div class="mb-5">
+<div class="flex justify-between text-sm mb-2">
+<span>
+                                    Rented
+                                </span>
+<span class="font-semibold" id="fleetRentedCount">
+
+                                    0
+
+                                </span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 rounded-full" id="fleetRentedBar" style="width: 0%">
+</div>
+</div>
+</div>
+<!-- Maintenance -->
+<div class="mb-5">
+<div class="flex justify-between text-sm mb-2">
+<span>
+                                    Maintenance
+                                </span>
+<span class="font-semibold" id="fleetMaintenanceCount">
+
+                                    0
+
+                                </span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 rounded-full" id="fleetMaintenanceBar" style="width: 0%">
+</div>
+</div>
+</div>
+<!-- Inactive -->
+<div>
+<div class="flex justify-between text-sm mb-2">
+<span>
+                                    Inactive
+                                </span>
+<span class="font-semibold" id="fleetInactiveCount">
+
+                                    0
+
+                                </span>
+</div>
+<div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-slate-500 rounded-full" id="fleetInactiveBar" style="width: 0%">
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- BOTTOM -->
+<div class="grid xl:grid-cols-3 gap-6">
+<!-- Recent Bookings -->
+<section class="xl:col-span-2 bg-white border border-slate-200 rounded-2xl overflow-hidden">
+<div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+<div>
+<h3 class="font-bold text-lg text-slate-900">
+                                    Recent Bookings
+                                </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                    Latest rental requests
+                                </p>
+</div>
+<a class="text-sm font-semibold text-blue-600" href="bookings.html">
+
+                                View All
+
+                            </a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 text-slate-500 border-b border-slate-200">
+<tr>
+<th class="px-6 py-4 text-left">
+                                            Booking
+                                        </th>
+<th class="px-6 py-4 text-left">
+                                            Customer
+                                        </th>
+<th class="px-6 py-4 text-left">
+                                            Vehicle
+                                        </th>
+<th class="px-6 py-4 text-left">
+                                            Status
+                                        </th>
+<th class="px-6 py-4 text-left">
+                                            Total
+                                        </th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100" id="dashboardRecentBookings">
+<tr>
+<td class="px-6 py-10 text-center text-slate-500" colspan="5">
+
+                                            Loading bookings...
+
+                                        </td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Upcoming Returns -->
+<section class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+<div class="px-6 py-5 border-b border-slate-200">
+<h3 class="font-bold text-lg text-slate-900">
+                                Upcoming Returns
+                            </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                Active rentals due soon
+                            </p>
+</div>
+<div class="divide-y divide-slate-100" id="dashboardUpcomingReturns">
+<div class="p-6 text-sm text-slate-500 text-center">
+
+                                Loading returns...
+
+                            </div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+if (window.Chart) {
+    Chart.defaults.color = "#b5b5b5";
+    Chart.defaults.borderColor = "rgba(255,255,255,0.10)";
+}
+</script>
+<script src="../js/config/store.js"></script>
+<script src="../js/guards/admin-guard.js">
+</script>
+<script src="../js/dashboard.js">
+</script>
+</body>
+</html>

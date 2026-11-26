@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RentGo | Drive Your Way</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="public-page text-white">
+
+<div class="public-frame dark-frame">
+
+    <!-- HERO -->
+    <main
+        class="bg-black">
+
+        <section
+            class="rentgo-hero relative min-h-[calc(100vh-44px)] overflow-hidden">
+
+
+            <!-- DARK OVERLAY -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/20">
+            </div>
+
+
+            <!-- TOP NAVBAR -->
+            <header
+                class="relative z-20 px-6 md:px-10 lg:px-12 pt-8 flex items-center justify-between">
+
+                <!-- Logo -->
+                <a
+                    href="index.html"
+                    class="text-3xl font-bold tracking-tight">
+
+                    RentGo
+
+                </a>
+
+
+                <!-- Right Controls -->
+                <div class="flex items-center gap-3">
+
+                    <form
+                    id="heroSearchForm"
+                    class="relative hidden md:flex items-center h-14 w-[530px] border border-white/30 bg-white/10 backdrop-blur-xl rounded-2xl">
+
+                    <!-- MODEL DROPDOWN -->
+                    <div
+                        id="modelDropdown"
+                        class="hero-model-dropdown">
+
+                        <button
+                            type="button"
+                            id="modelDropdownBtn"
+                            class="hero-model-button">
+
+                            <span id="selectedModelText">
+                                Models
+                            </span>
+
+                            <i
+                                id="modelChevron"
+                                class="fa-solid fa-chevron-down">
+                            </i>
+
+                        </button>
+
+
+                        <div
+                            id="modelDropdownMenu"
+                            class="hero-model-menu hidden">
+
+                            <div id="modelDropdownList">
+
+                                <!-- Models loaded from local vehicle data -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+                    <div class="w-px h-full bg-white/20"></div>
+
+
+                    <!-- SEARCH -->
+                    <div class="flex-1 h-full">
+
+                        <input
+                            type="text"
+                            id="heroSearchInput"
+                            placeholder="Search..."
+                            autocomplete="off"
+                            class="w-full h-full bg-transparent outline-none px-5 text-white placeholder:text-white/60">
+
+                    </div>
+
+
+                    <!-- SEARCH BUTTON -->
+                    <button
+                        type="submit"
+                        aria-label="Search cars"
+                        class="w-12 h-12 mr-1 bg-white text-black rounded-xl flex-shrink-0 flex items-center justify-center text-lg hover:bg-blue-600 hover:text-white transition">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                </form>
+
+                    <!-- Menu -->
+                    <button
+                        id="heroMenuBtn"
+                        class="w-12 h-12 border border-white/30 bg-white/10 backdrop-blur-xl rounded-2xl flex items-center justify-center text-xl hover:bg-white/15 transition">
+
+                        <i
+                            id="heroMenuIcon"
+                            class="fa-solid fa-bars">
+                        </i>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- TOP DETAILS -->
+            <div
+                class="relative z-10 px-6 md:px-10 lg:px-12 mt-16">
+
+                <div
+                    class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 text-sm text-white/70">
+
+                    <span>
+                        Malaysia
+                    </span>
+
+                    <div
+                        class="hidden md:block w-44 h-px bg-white/50">
+                    </div>
+
+                    <span>
+                        Premium Car Rental by RentGo
+                    </span>
+
+                </div>
+
+            </div>
+
+            
+
+
+            <!-- HERO CONTENT -->
+            <div
+                class="absolute z-10 left-6 md:left-10 lg:left-12 bottom-32 md:bottom-36 max-w-5xl">
+
+                <!-- LABEL -->
+                <div class="rentgo-hero-label">
+
+                    <span></span>
+
+                    <strong>
+                        CAR RENTAL
+                    </strong>
+
+                </div>
+
+
+                <!-- HEADLINE -->
+                <div class="rentgo-hero-copy">
+
+                    <h1>
+                        Drive Easy,
+                        <br>
+                        Go Anywhere.
+                    </h1>
+
+                    <p>
+                        Discover reliable vehicles, transparent pricing and a smoother way to
+                        rent your next car.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FLOATING MENU -->
+            <div
+                id="heroMenu"
+                class="hidden absolute z-30 top-24 right-6 md:right-10 lg:right-12 w-[340px]">
+
+                <div
+                    class="border border-white/30 bg-black/30 backdrop-blur-2xl rounded-[24px] p-4 shadow-2xl">
+
+                <!-- =========================
+                    GUEST MENU
+                ========================== -->
+                <div data-auth-guest>
+
+                    <nav class="text-xl space-y-1">
+
+                        <a
+                            href="index.html"
+                            class="hero-menu-link">
+
+                            Home
+
+                        </a>
+
+                        <a
+                            href="#about"
+                            class="hero-menu-link">
+
+                            About
+
+                        </a>
+
+                        <a
+                            href="user/cars.html"
+                            class="hero-menu-link">
+
+                            Cars
+
+                        </a>
+
+                        <a
+                            href="#how-it-works"
+                            class="hero-menu-link">
+
+                            How It Works
+
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="hero-menu-link">
+
+                            Contact
+
+                        </a>
+
+                    </nav>
+
+
+                    <a
+                        href="login.html"
+                        class="mt-4 h-14 border border-white/40 rounded-2xl flex items-center justify-between px-4 text-lg hover:bg-white/10 transition">
+
+                        <span>
+                            Sign In
+                        </span>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-white text-black flex items-center justify-center">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                    LOGGED IN CUSTOMER MENU
+                ========================== -->
+                <div
+                    data-auth-user
+                    class="hidden">
+
+                    <div
+                        class="px-3 pb-3 mb-2 border-b border-white/10">
+
+                        <p class="text-xs text-white/40">
+                            Signed in as
+                        </p>
+
+                        <p
+                            data-customer-name
+                            class="text-base font-semibold text-white mt-1">
+
+                            Customer
+
+                        </p>
+
+                    </div>
+
+
+                    <nav class="text-xl space-y-1">
+
+                        <a
+                            href="index.html"
+                            class="hero-menu-link">
+
+                            Home
+
+                        </a>
+
+                        <a
+                            href="user/cars.html"
+                            class="hero-menu-link">
+
+                            Browse Cars
+
+                        </a>
+
+                        <a
+                            href="user/my-bookings.html"
+                            class="hero-menu-link">
+
+                            My Bookings
+
+                        </a>
+
+                        <a
+                            href="#how-it-works"
+                            class="hero-menu-link">
+
+                            How It Works
+
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="hero-menu-link">
+
+                            Contact
+
+                        </a>
+
+                    </nav>
+
+
+                    <button
+                        type="button"
+                        data-customer-logout
+                        class="mt-4 w-full h-14 border border-white/40 rounded-2xl flex items-center justify-between px-4 text-lg hover:bg-white/10 transition">
+
+                        <span>
+                            Sign Out
+                        </span>
+
+                        <div
+                            class="w-11 h-11 rounded-xl bg-white text-black flex items-center justify-center">
+
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                        </div>
+
+                    </button>
+
+                </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO BOTTOM CTA STRIP -->
+            
+                        
+            <div class="hero-bottom-strip">
+
+                <!-- BOOK A CAR -->
+                <a
+                    href="user/cars.html"
+                    class="hero-bottom-card">
+
+                    <span>
+                        Book a Car
+                    </span>
+
+                    <span class="hero-bottom-arrow">
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+
+                    </span>
+
+                </a>
+
+
+                <!-- SIGN IN -->
+                <!-- GUEST -->
+                <a
+                    data-auth-guest
+                    href="login.html"
+                    class="hero-bottom-card hero-bottom-card--outlined">
+
+                    <span>
+                        Sign In
+                    </span>
+
+                    <span class="hero-bottom-arrow">
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+
+                    </span>
+
+                </a>
+
+
+                <!-- LOGGED IN CUSTOMER -->
+                <button
+                    data-auth-user
+                    data-customer-logout
+                    type="button"
+                    class="hero-bottom-card hero-bottom-card--outlined hidden w-full text-left">
+
+                    <span>
+                        Sign Out
+                    </span>
+
+                    <span class="hero-bottom-arrow">
+
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                    </span>
+
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+
+            <!-- ABOUT -->
+        <section
+            id="about"
+            class="rentgo-about">
+
+            <div class="rentgo-about-layout">
+
+                <!-- LEFT LABEL -->
+                <div class="rentgo-about-label">
+
+                    <span class="rentgo-about-line"></span>
+
+                    <span>
+                        ABOUT US
+                    </span>
+
+                </div>
+
+
+                <!-- RIGHT CONTENT -->
+                <div class="rentgo-about-content">
+
+                    <h2 class="rentgo-about-title">
+
+                        Discover the simplicity and freedom behind
+                        RentGo, your trusted destination for reliable
+                        car rentals and effortless journeys.
+
+                    </h2>
+
+
+                    <!-- STATS -->
+                    <div class="rentgo-about-stats">
+
+                        <!-- BOOKINGS -->
+                        <div class="rentgo-stat">
+
+                            <div class="rentgo-stat-number">
+
+                                <span id="aboutTotalBookings">
+                                    0
+                                </span>
+
+                                <span class="rentgo-stat-accent">
+                                    +
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Total Bookings
+                            </p>
+
+                        </div>
+
+
+                        <!-- VEHICLES -->
+                        <div class="rentgo-stat">
+
+                            <div class="rentgo-stat-number">
+
+                                <span id="aboutTotalCars">
+                                    0
+                                </span>
+
+                                <span class="rentgo-stat-accent">
+                                    +
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Cars In Fleet
+                            </p>
+
+                        </div>
+
+
+                        <!-- CUSTOMERS -->
+                        <div class="rentgo-stat">
+
+                            <div class="rentgo-stat-number">
+
+                                <span id="aboutTotalCustomers">
+                                    0
+                                </span>
+
+                                <span class="rentgo-stat-accent">
+                                    +
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Happy Customers
+                            </p>
+
+                        </div>
+
+
+                        <!-- AVAILABLE -->
+                        <div class="rentgo-stat">
+
+                            <div class="rentgo-stat-number">
+
+                                <span id="aboutAvailableCars">
+                                    0
+                                </span>
+
+                                <span class="rentgo-stat-accent">
+                                    +
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Cars Available
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIVIDER -->
+                    <div class="rentgo-about-divider"></div>
+
+
+                    <!-- BOTTOM -->
+                    <div class="rentgo-about-bottom">
+
+                        <p class="rentgo-about-description">
+
+                            From everyday drives to longer journeys,
+                            RentGo brings together convenient booking,
+                            dependable vehicles and a smooth rental
+                            experience in one place.
+
+                        </p>
+
+
+                        <a
+                            href="#how-it-works"
+                            class="rentgo-learn-button">
+
+                            <span>
+                                Learn More
+                            </span>
+
+                            <span class="rentgo-learn-arrow">
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+            OUR MODELS
+        ========================================= -->
+        <section
+            id="models"
+            class="rentgo-featured-models">
+
+            <!-- SECTION HEADER -->
+            <div class="rentgo-models-header">
+
+                <div>
+
+                    <div class="rentgo-models-eyebrow">
+
+                        <span></span>
+
+                        OUR MODELS
+
+                    </div>
+
+
+                    <h2>
+                        Our Featured Models
+                    </h2>
+
+                </div>
+
+
+                <p class="rentgo-models-intro">
+                    Explore a handpicked selection of RentGo vehicles
+                    designed for comfort, convenience and every journey.
+                </p>
+
+            </div>
+
+
+            <!-- =====================================
+                MODEL 1
+            ====================================== -->
+            <a
+                href="user/cars.html?search=Perodua%20Myvi"
+                class="rentgo-featured-card">
+
+                <img
+                    src="images/myvi_adv.jpg"
+                    alt="Perodua Myvi"
+                    class="rentgo-featured-image">
+
+
+                <div class="rentgo-featured-overlay"></div>
+
+
+                <!-- BRAND -->
+                <div class="rentgo-featured-brand">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                    <span>
+                        Perodua
+                    </span>
+
+                </div>
+
+
+                <!-- MODEL NAME -->
+                <h3 class="rentgo-featured-name">
+                    Myvi 1.5 AV
+                </h3>
+
+
+                <!-- SPECS -->
+                <div class="rentgo-featured-specs">
+
+                    <div>
+
+                        <span>
+                            Daily Rental
+                        </span>
+
+                        <strong>
+                            RM 130
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Transmission
+                        </span>
+
+                        <strong>
+                            Automatic
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Seats
+                        </span>
+
+                        <strong>
+                            5 Seats
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <strong>
+                            2023
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =====================================
+                MODEL 2
+            ====================================== -->
+            <a
+                href="user/cars.html?search=Honda%20City"
+                class="rentgo-featured-card">
+
+                <img
+                    src="images/city_v.webp"
+                    alt="Honda City"
+                    class="rentgo-featured-image">
+
+
+                <div class="rentgo-featured-overlay"></div>
+
+
+                <div class="rentgo-featured-brand">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                    <span>
+                        Honda
+                    </span>
+
+                </div>
+
+
+                <h3 class="rentgo-featured-name">
+                    City 1.5 V
+                </h3>
+
+
+                <div class="rentgo-featured-specs">
+
+                    <div>
+
+                        <span>
+                            Daily Rental
+                        </span>
+
+                        <strong>
+                            RM 180
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Transmission
+                        </span>
+
+                        <strong>
+                            Automatic
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Seats
+                        </span>
+
+                        <strong>
+                            5 Seats
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <strong>
+                            2022
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- =====================================
+                MODEL 3
+            ====================================== -->
+            <a
+                href="user/cars.html?search=Toyota%20Vios"
+                class="rentgo-featured-card">
+
+                <img
+                    src="images/vios.webp"
+                    alt="Toyota Vios"
+                    class="rentgo-featured-image">
+
+
+                <div class="rentgo-featured-overlay"></div>
+
+
+                <div class="rentgo-featured-brand">
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                    <span>
+                        Toyota
+                    </span>
+
+                </div>
+
+
+                <h3 class="rentgo-featured-name">
+                    Vios 1.5 G
+                </h3>
+
+
+                <div class="rentgo-featured-specs">
+
+                    <div>
+
+                        <span>
+                            Daily Rental
+                        </span>
+
+                        <strong>
+                            RM 200
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Transmission
+                        </span>
+
+                        <strong>
+                            Automatic
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Seats
+                        </span>
+
+                        <strong>
+                            5 Seats
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Year
+                        </span>
+
+                        <strong>
+                            2024
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- SEE ALL -->
+            <div class="rentgo-models-footer">
+
+                <a
+                    href="user/cars.html"
+                    class="rentgo-see-models">
+
+                    <span>
+                        See All Models
+                    </span>
+
+                    <span class="rentgo-see-models-arrow">
+
+                        <i class="fa-solid fa-arrow-right-long"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+            HOW IT WORKS
+        ========================================= -->
+        <section
+        id="how-it-works"
+        class="rentgo-how">
+
+        <div class="rentgo-how-grid">
+
+            <!-- LEFT: STICKY CONTENT -->
+            <div class="rentgo-how-left">
+
+                <div class="rentgo-how-sticky">
+
+                    <div class="rentgo-how-eyebrow">
+
+                        <span></span>
+
+                        HOW IT WORKS
+
+                    </div>
+
+
+                    <h2>
+                        Follow these simple steps to
+                        choose your ideal vehicle and
+                        drive away effortlessly.
+                    </h2>
+
+
+                    <a
+                        href="user/cars.html"
+                        class="rentgo-how-book">
+
+                        <span>
+                            Book Now
+                        </span>
+
+                        <span class="rentgo-how-book-arrow">
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CENTER: SCROLL PROGRESS -->
+            <div class="rentgo-how-progress">
+
+                <div class="rentgo-how-progress-sticky">
+
+                    <!-- BASE LINE -->
+                    <div class="rentgo-how-track"></div>
+
+
+                    <!-- ANIMATED LINE -->
+                    <div
+                        id="howProgressFill"
+                        class="rentgo-how-fill">
+                    </div>
+
+
+                    <!-- DOT 1 -->
+                    <span
+                        class="rentgo-how-dot active"
+                        data-progress-dot="0">
+                    </span>
+
+
+                    <!-- DOT 2 -->
+                    <span
+                        class="rentgo-how-dot"
+                        data-progress-dot="1">
+                    </span>
+
+
+                    <!-- DOT 3 -->
+                    <span
+                        class="rentgo-how-dot"
+                        data-progress-dot="2">
+                    </span>
+
+
+                    <!-- DOT 4 -->
+                    <span
+                        class="rentgo-how-dot"
+                        data-progress-dot="3">
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT: STEPS -->
+            <div class="rentgo-how-steps">
+
+                <!-- STEP 1 -->
+                <article
+                    class="rentgo-how-card active"
+                    data-how-step="0">
+
+                    <div class="rentgo-how-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Browse Our Fleet
+                    </h3>
+
+
+                    <p>
+                        Explore RentGo's available vehicles and compare
+                        models, rental rates and features for your journey.
+                    </p>
+
+                </article>
+
+
+                <!-- STEP 2 -->
+                <article
+                    class="rentgo-how-card"
+                    data-how-step="1">
+
+                    <div class="rentgo-how-icon">
+
+                        <i class="fa-solid fa-car-side"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Pick Your Ideal Vehicle
+                    </h3>
+
+
+                    <p>
+                        Select the car that suits your needs, preferred
+                        category and rental budget.
+                    </p>
+
+                </article>
+
+
+                <!-- STEP 3 -->
+                <article
+                    class="rentgo-how-card"
+                    data-how-step="2">
+
+                    <div class="rentgo-how-icon">
+
+                        <i class="fa-regular fa-calendar-check"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Submit Your Booking
+                    </h3>
+
+
+                    <p>
+                        Choose your pickup and return dates, complete your
+                        details and send your reservation to RentGo.
+                    </p>
+
+                </article>
+
+
+                <!-- STEP 4 -->
+                <article
+                    class="rentgo-how-card"
+                    data-how-step="3">
+
+                    <div class="rentgo-how-icon">
+
+                        <i class="fa-solid fa-key"></i>
+
+                    </div>
+
+
+                    <h3>
+                        Collect & Drive
+                    </h3>
+
+
+                    <p>
+                        Once your reservation is confirmed, collect your
+                        vehicle and enjoy the journey.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+        </section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer
+    id="contact"
+    class="rentgo-footer">
+
+    <div class="rentgo-footer-inner">
+
+        <!-- TOP -->
+        <div class="rentgo-footer-grid">
+
+            <!-- BRAND -->
+            <div class="rentgo-footer-brand">
+
+                <h2>
+                    RentGo
+                </h2>
+
+                <p>
+                    A simpler and smarter way to rent your next car.
+                    Discover reliable vehicles and enjoy a smooth
+                    booking experience with RentGo.
+                </p>
+
+
+                <a
+                    href="user/cars.html"
+                    class="rentgo-footer-book">
+
+                    <span>
+                        Book Now
+                    </span>
+
+                    <span class="rentgo-footer-book-arrow">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- DECORATIVE DOT -->
+            <div class="rentgo-footer-dot"></div>
+
+
+            <!-- MAIN PAGES -->
+            <div class="rentgo-footer-column">
+
+                <p class="rentgo-footer-heading">
+                    Main Pages
+                </p>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#models">
+                    Models
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+            <div class="rentgo-footer-column">
+
+                <p class="rentgo-footer-heading">
+                    Account
+                </p>
+
+                <a href="login.html">
+                    Sign In
+                </a>
+
+                <a href="user/register.html">
+                    Register
+                </a>
+
+                <a href="user/my-bookings.html">
+                    My Bookings
+                </a>
+
+            </div>
+
+
+            <!-- VISIT -->
+            <div class="rentgo-footer-column">
+
+                <p class="rentgo-footer-heading">
+                    Explore
+                </p>
+
+                <a href="user/cars.html">
+                    Browse Cars
+                </a>
+
+                <a href="#models">
+                    Featured Models
+                </a>
+
+                <a href="#how-it-works">
+                    How It Works
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div class="rentgo-footer-column rentgo-footer-contact">
+
+                <p class="rentgo-footer-heading">
+                    Contact Us
+                </p>
+
+                <p>
+                    +60 12-345 6789
+                </p>
+
+                <p>
+                    hello@rentgo.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DIVIDER -->
+        <div class="rentgo-footer-divider"></div>
+
+
+        <!-- BOTTOM -->
+        <div class="rentgo-footer-bottom">
+
+            <p>
+                © 2026 RentGo. All rights reserved.
+            </p>
+
+
+            <div class="rentgo-footer-bottom-links">
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+    <script src="js/config/store.js"></script>
+<script
+        src="js/user-home.js">
+    </script>
+
+    <script
+        src="js/customer-nav.js">
+    </script>
+
+    <script>
+
+        const heroMenuBtn =
+            document.getElementById(
+                "heroMenuBtn"
+            );
+
+        const heroMenu =
+            document.getElementById(
+                "heroMenu"
+            );
+
+        const heroMenuIcon =
+            document.getElementById(
+                "heroMenuIcon"
+            );
+
+
+        heroMenuBtn.addEventListener(
+            "click",
+            () => {
+
+                heroMenu.classList.toggle(
+                    "hidden"
+                );
+
+
+                heroMenuIcon.classList.toggle(
+                    "fa-bars"
+                );
+
+
+                heroMenuIcon.classList.toggle(
+                    "fa-xmark"
+                );
+
+            }
+        );
+
+
+        /* =========================================
+   HOW IT WORKS SCROLL PROGRESS
+========================================= */
+
+const howSection =
+    document.getElementById(
+        "how-it-works"
+    );
+
+const howCards =
+    Array.from(
+        document.querySelectorAll(
+            "[data-how-step]"
+        )
+    );
+
+const howDots =
+    Array.from(
+        document.querySelectorAll(
+            "[data-progress-dot]"
+        )
+    );
+
+const howProgressFill =
+    document.getElementById(
+        "howProgressFill"
+    );
+
+
+function updateHowProgress() {
+
+    if (
+        !howSection ||
+        !howCards.length ||
+        !howProgressFill
+    ) {
+        return;
+    }
+
+
+    /*
+        Reference point:
+        around 42% down viewport
+    */
+
+    const triggerY =
+        window.innerHeight * 0.42;
+
+
+    const cardCenters =
+        howCards.map(
+            card => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                return (
+                    rect.top +
+                    rect.height / 2
+                );
+
+            }
+        );
+
+
+    /*
+        Find closest card to trigger line
+    */
+
+    let activeIndex = 0;
+
+    let closestDistance =
+        Infinity;
+
+
+    cardCenters.forEach(
+        (
+            center,
+            index
+        ) => {
+
+            const distance =
+                Math.abs(
+                    center -
+                    triggerY
+                );
+
+
+            if (
+                distance <
+                closestDistance
+            ) {
+
+                closestDistance =
+                    distance;
+
+                activeIndex =
+                    index;
+
+            }
+
+        }
+    );
+
+
+    /*
+        Card highlight
+    */
+
+    howCards.forEach(
+        (
+            card,
+            index
+        ) => {
+
+            card.classList.toggle(
+                "active",
+                index ===
+                    activeIndex
+            );
+
+        }
+    );
+
+
+    /*
+        Progress:
+        each step = 1/3
+    */
+
+    const progress =
+        howCards.length > 1
+            ? activeIndex /
+                (
+                    howCards.length -
+                    1
+                )
+            : 0;
+
+
+    howProgressFill.style.height =
+        `${progress * 100}%`;
+
+
+    /*
+        Activate dots up to current step
+    */
+
+    howDots.forEach(
+        (
+            dot,
+            index
+        ) => {
+
+            dot.classList.toggle(
+                "active",
+                index <=
+                    activeIndex
+            );
+
+        }
+    );
+
+}
+
+
+/* Smooth requestAnimationFrame */
+
+let howTicking =
+    false;
+
+
+function requestHowUpdate() {
+
+    if (
+        howTicking
+    ) {
+        return;
+    }
+
+
+    howTicking =
+        true;
+
+
+    requestAnimationFrame(
+        () => {
+
+            updateHowProgress();
+
+            howTicking =
+                false;
+
+        }
+    );
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    requestHowUpdate,
+    {
+        passive: true
+    }
+);
+
+
+window.addEventListener(
+    "resize",
+    requestHowUpdate
+);
+
+
+updateHowProgress();
+
+    </script>
+
+
+
+
+</div>
+
+</body>
+
+
+
+</html>

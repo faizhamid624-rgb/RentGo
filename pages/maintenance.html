@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentGo | Maintenance</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+</head>
+<body class="rg-theme rg-admin bg-slate-50 text-slate-800">
+<div class="min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-slate-950 text-white fixed inset-y-0 left-0 hidden lg:flex flex-col">
+<!-- Logo -->
+<div class="h-20 px-6 flex items-center border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="rg-brand-mark w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+<i class="fa-solid fa-car-side"></i>
+</div>
+<div>
+<h1 class="rg-brand-name font-bold text-lg">
+                            RentGo
+                        </h1>
+<p class="text-xs text-slate-400">
+                            Admin Portal
+                        </p>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 px-4 py-6 space-y-1">
+<a class="sidebar-link" href="dashboard.html">
+<i class="fa-solid fa-chart-line w-5"></i>
+<span>
+                        Dashboard
+                    </span>
+</a>
+<a class="sidebar-link" href="cars.html">
+<i class="fa-solid fa-car w-5"></i>
+<span>
+                        Fleet
+                    </span>
+</a>
+<a class="sidebar-link" href="bookings.html">
+<i class="fa-regular fa-calendar-check w-5"></i>
+<span>
+                        Bookings
+                    </span>
+</a>
+<a class="sidebar-link" href="customers.html">
+<i class="fa-solid fa-users w-5"></i>
+<span>
+                        Customers
+                    </span>
+</a>
+<a class="sidebar-link" href="payments.html">
+<i class="fa-solid fa-credit-card w-5"></i>
+<span>
+                        Payments
+                    </span>
+</a>
+<a class="sidebar-link bg-blue-600 text-white" href="maintenance.html">
+<i class="fa-solid fa-screwdriver-wrench w-5"></i>
+<span>
+                        Maintenance
+                    </span>
+</a>
+<a class="sidebar-link" href="reports.html">
+<i class="fa-solid fa-chart-pie w-5"></i>
+<span>
+                        Reports
+                    </span>
+</a>
+
+</nav>
+<!-- Logout -->
+<div class="px-4 pb-5">
+<button class="sidebar-link w-full text-left" data-logout="" type="button">
+<i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+<span>
+                        Logout
+                    </span>
+</button>
+</div>
+</aside>
+<!-- Main -->
+<div class="flex-1 lg:ml-64">
+<!-- Topbar -->
+<header class="h-20 bg-white border-b border-slate-200 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+<div>
+<h2 class="font-bold text-xl text-slate-900">
+                        Maintenance
+                    </h2>
+<p class="text-sm text-slate-500">
+                        Monitor vehicle maintenance and service records
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
+<i class="fa-regular fa-user"></i>
+</div>
+<div class="hidden sm:block">
+<p class="text-sm font-semibold" data-admin-name="">
+
+                            Administrator
+
+                        </p>
+<p class="text-xs text-slate-400">
+                            Administrator
+                        </p>
+</div>
+</div>
+</header>
+<main class="p-6 lg:p-8">
+<!-- Page Heading -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-7">
+<div>
+<h3 class="text-2xl font-bold text-slate-900">
+                            Maintenance Management
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Schedule services and track vehicle maintenance progress.
+                        </p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition" id="addMaintenanceBtn">
+<i class="fa-solid fa-plus"></i>
+
+                        Add Maintenance
+
+                    </button>
+</div>
+<!-- Summary Cards -->
+<div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-7">
+<!-- In Maintenance -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    In Maintenance
+                                </p>
+<h4 class="dashboard-value" id="maintenanceActiveCount">
+
+                                    0
+
+                                </h4>
+</div>
+<div class="dashboard-icon bg-red-50 text-red-600">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
+</div>
+</div>
+<!-- Scheduled -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Scheduled
+                                </p>
+<h4 class="dashboard-value" id="maintenanceScheduledCount">
+
+                                    0
+
+                                </h4>
+</div>
+<div class="dashboard-icon bg-amber-50 text-amber-600">
+<i class="fa-regular fa-calendar"></i>
+</div>
+</div>
+</div>
+<!-- Completed -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Completed
+                                </p>
+<h4 class="dashboard-value" id="maintenanceCompletedCount">
+
+                                    0
+
+                                </h4>
+</div>
+<div class="dashboard-icon bg-emerald-50 text-emerald-600">
+<i class="fa-solid fa-circle-check"></i>
+</div>
+</div>
+</div>
+<!-- Total Cost -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Maintenance Cost
+                                </p>
+<h4 class="dashboard-value" id="maintenanceTotalCost">
+
+                                    RM 0.00
+
+                                </h4>
+</div>
+<div class="dashboard-icon bg-violet-50 text-violet-600">
+<i class="fa-solid fa-coins"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Filters -->
+<div class="bg-white border border-slate-200 rounded-2xl p-5 mb-6">
+<div class="grid md:grid-cols-3 gap-4">
+<!-- Search -->
+<div class="md:col-span-2">
+<label class="form-label">
+                                Search
+                            </label>
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+</i>
+<input class="form-input pl-11" id="maintenanceSearch" placeholder="Vehicle, plate number or maintenance type..." type="text"/>
+</div>
+</div>
+<!-- Status -->
+<div>
+<label class="form-label">
+                                Status
+                            </label>
+<select class="form-input" id="maintenanceStatusFilter">
+<option value="">
+                                    All Status
+                                </option>
+<option value="scheduled">
+                                    Scheduled
+                                </option>
+<option value="in_progress">
+                                    In Progress
+                                </option>
+<option value="completed">
+                                    Completed
+                                </option>
+<option value="cancelled">
+                                    Cancelled
+                                </option>
+</select>
+</div>
+</div>
+</div>
+<!-- Maintenance Table -->
+<div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 text-slate-500 border-b border-slate-200">
+<tr>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Vehicle
+
+                                    </th>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Maintenance Type
+
+                                    </th>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Date
+
+                                    </th>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Description
+
+                                    </th>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Cost
+
+                                    </th>
+<th class="px-6 py-4 text-left font-semibold">
+
+                                        Status
+
+                                    </th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100" id="maintenanceTableBody">
+<tr>
+<td class="px-6 py-12 text-center text-slate-500" colspan="6">
+
+                                        Loading maintenance records...
+
+                                    </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Add Maintenance Modal -->
+<div class="hidden fixed inset-0 bg-slate-950/60 z-50 items-center justify-center p-4" id="maintenanceModal">
+<div class="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+<!-- Modal Header -->
+<div class="px-6 py-5 border-b border-slate-200 flex items-center justify-between">
+<div>
+<h3 class="font-bold text-xl">
+                        Add Maintenance Record
+                    </h3>
+<p class="text-sm text-slate-500 mt-1">
+                        Schedule or start vehicle maintenance.
+                    </p>
+</div>
+<button class="w-9 h-9 rounded-lg hover:bg-slate-100" id="closeMaintenanceModal" type="button">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<!-- Form -->
+<form class="p-6" id="maintenanceForm">
+<div class="grid sm:grid-cols-2 gap-5">
+<!-- Vehicle -->
+<div class="sm:col-span-2">
+<label class="form-label">
+                            Vehicle
+                        </label>
+<select class="form-input" id="maintenanceVehicle" required="">
+<option value="">
+                                Select vehicle
+                            </option>
+</select>
+</div>
+<!-- Type -->
+<div>
+<label class="form-label">
+                            Maintenance Type
+                        </label>
+<select class="form-input" id="maintenanceType" required="">
+<option value="">
+                                Select type
+                            </option>
+<option value="Routine Service">
+                                Routine Service
+                            </option>
+<option value="Engine Service">
+                                Engine Service
+                            </option>
+<option value="Oil Change">
+                                Oil Change
+                            </option>
+<option value="Tyre Service">
+                                Tyre Service
+                            </option>
+<option value="Brake Service">
+                                Brake Service
+                            </option>
+<option value="Battery Replacement">
+                                Battery Replacement
+                            </option>
+<option value="Repair">
+                                Repair
+                            </option>
+<option value="Inspection">
+                                Inspection
+                            </option>
+</select>
+</div>
+<!-- Date -->
+<div>
+<label class="form-label">
+                            Maintenance Date
+                        </label>
+<input class="form-input" id="maintenanceDate" required="" type="date"/>
+</div>
+<!-- Cost -->
+<div>
+<label class="form-label">
+                            Cost
+                        </label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+
+                                RM
+
+                            </span>
+<input class="form-input pl-12" id="maintenanceCost" min="0" placeholder="0.00" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Status -->
+<div>
+<label class="form-label">
+                            Status
+                        </label>
+<select class="form-input" id="maintenanceStatus" required="">
+<option value="scheduled">
+                                Scheduled
+                            </option>
+<option value="in_progress">
+                                In Progress
+                            </option>
+<option value="completed">
+                                Completed
+                            </option>
+</select>
+</div>
+</div>
+<!-- Description -->
+<div class="mt-5">
+<label class="form-label">
+                        Description
+                    </label>
+<textarea class="form-input resize-none" id="maintenanceDescription" placeholder="Describe the service or repair work..." rows="4"></textarea>
+</div>
+<div class="flex justify-end gap-3 mt-7 pt-5 border-t border-slate-200">
+<button class="px-5 py-2.5 border border-slate-200 rounded-lg font-medium" id="cancelMaintenanceBtn" type="button">
+
+                        Cancel
+
+                    </button>
+<button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold" type="submit">
+
+                        Save Maintenance
+
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<script src="../js/config/store.js"></script>
+<script src="../js/guards/admin-guard.js">
+</script>
+<script src="../js/maintenance.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentGo | Customer Management</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+</head>
+<body class="rg-theme rg-admin bg-slate-100 text-slate-800">
+<div class="min-h-screen flex">
+<!-- Sidebar -->
+<aside class="w-64 bg-slate-950 text-slate-300 min-h-screen fixed left-0 top-0">
+<div class="h-20 flex items-center px-6 border-b border-slate-800">
+<div>
+<h1 class="rg-brand-name text-xl font-bold text-white tracking-wide">
+                        RentGo
+                    </h1>
+<p class="text-xs text-slate-500 mt-1">
+                        Car Rental Management
+                    </p>
+</div>
+</div>
+<nav class="px-4 py-6 space-y-1">
+<a class="sidebar-link" href="dashboard.html">
+<i class="fa-solid fa-chart-line w-5"></i>
+<span>Dashboard</span>
+</a>
+<a class="sidebar-link" href="cars.html">
+<i class="fa-solid fa-car w-5"></i>
+<span>Fleet</span>
+</a>
+<a class="sidebar-link" href="bookings.html">
+<i class="fa-solid fa-calendar-check w-5"></i>
+<span>Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600 text-white" href="customers.html">
+<i class="fa-solid fa-users w-5"></i>
+<span>Customers</span>
+</a>
+<a class="sidebar-link" href="payments.html">
+<i class="fa-solid fa-wallet w-5"></i>
+<span>Payments</span>
+</a>
+<a class="sidebar-link" href="maintenance.html">
+<i class="fa-solid fa-screwdriver-wrench w-5"></i>
+<span>Maintenance</span>
+</a>
+<a class="sidebar-link" href="reports.html">
+<i class="fa-solid fa-chart-column w-5"></i>
+<span>Reports</span>
+</a>
+<div class="pt-5 mt-5 border-t border-slate-800">
+
+
+
+<button class="sidebar-link w-full text-left" data-logout="" type="button">
+<i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+<span>
+                            Logout
+                        </span>
+</button>
+</div>
+</nav>
+</aside>
+<!-- Main -->
+<main class="ml-64 flex-1 min-h-screen">
+<!-- Navbar -->
+<header class="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-8 sticky top-0 z-20">
+<div>
+<h2 class="text-xl font-semibold">
+                        Customer Management
+                    </h2>
+<p class="text-sm text-slate-500">
+                        Manage customer records and rental history
+                    </p>
+</div>
+<div class="flex items-center gap-5">
+<button class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100">
+<i class="fa-regular fa-bell"></i>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full">
+</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+                            AD
+                        </div>
+<div class="hidden md:block">
+<p class="text-sm font-semibold" data-admin-name="">
+
+                                Administrator
+
+                            </p>
+<p class="text-xs text-slate-500">Administrator</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Content -->
+<section class="p-8">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-8">
+<div>
+<h3 class="text-2xl font-bold text-slate-900">
+                            Customers
+                        </h3>
+<p class="text-slate-500 mt-1">
+                            Manage customer profiles, contact details and rental activity.
+                        </p>
+</div>
+<button class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-medium shadow-sm transition" id="addCustomerBtn">
+<i class="fa-solid fa-user-plus"></i>
+                        Add Customer
+
+                    </button>
+</div>
+<!-- Summary -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mb-8">
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">Total Customers</p>
+<h4 class="dashboard-value" id="customerTotalSummary">0</h4>
+</div>
+<div class="dashboard-icon bg-blue-50 text-blue-600">
+<i class="fa-solid fa-users"></i>
+</div>
+</div>
+</div>
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">Active Customers</p>
+<h4 class="dashboard-value" id="customerActiveSummary">0</h4>
+</div>
+<div class="dashboard-icon bg-emerald-50 text-emerald-600">
+<i class="fa-solid fa-user-check"></i>
+</div>
+</div>
+</div>
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">New This Month</p>
+<h4 class="dashboard-value" id="customerNewSummary">0</h4>
+</div>
+<div class="dashboard-icon bg-violet-50 text-violet-600">
+<i class="fa-solid fa-user-plus"></i>
+</div>
+</div>
+</div>
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">Repeat Customers</p>
+<h4 class="dashboard-value" id="customerRepeatSummary">0</h4>
+</div>
+<div class="dashboard-icon bg-amber-50 text-amber-600">
+<i class="fa-solid fa-rotate"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- Table -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+<div class="p-5 border-b border-slate-200 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+<div class="relative w-full xl:w-80">
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+</i>
+<input class="w-full pl-11 pr-4 py-2.5 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500" id="customerSearch" placeholder="Search customer..." type="text"/>
+</div>
+<select class="border border-slate-200 rounded-lg px-4 py-2.5 outline-none bg-white" id="customerStatusFilter">
+<option value="">All Customers</option>
+<option value="active">Active</option>
+<option value="inactive">Inactive</option>
+</select>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 border-b border-slate-200">
+<tr class="text-left text-xs uppercase tracking-wider text-slate-500">
+<th class="px-6 py-4">Customer</th>
+<th class="px-6 py-4">Phone</th>
+<th class="px-6 py-4">IC / Passport</th>
+<th class="px-6 py-4">Total Rentals</th>
+<th class="px-6 py-4">Total Spent</th>
+<th class="px-6 py-4">Status</th>
+<th class="px-6 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100" id="customerTableBody">
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Add Customer Modal -->
+<div class="fixed inset-0 bg-slate-950/50 z-50 hidden items-center justify-center p-5" id="customerModal">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[92vh] overflow-y-auto">
+<div class="px-7 py-5 border-b border-slate-200 flex items-center justify-between">
+<div>
+<h3 class="text-lg font-semibold text-slate-900">
+                        Add Customer
+                    </h3>
+<p class="text-sm text-slate-500 mt-1">
+                        Create a new customer profile.
+                    </p>
+</div>
+<button class="w-10 h-10 rounded-lg hover:bg-slate-100 text-slate-500" id="closeCustomerModal">
+<i class="fa-solid fa-xmark"></i>
+</button>
+</div>
+<form class="p-7" id="customerForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div>
+<label class="form-label">
+                            Full Name
+                        </label>
+<input class="form-input" id="customerName" placeholder="Enter full name" required="" type="text"/>
+</div>
+<div>
+<label class="form-label">
+                            Email Address
+                        </label>
+<input class="form-input" id="customerEmail" placeholder="customer@email.com" type="email"/>
+</div>
+<div>
+<label class="form-label">
+                            Phone Number
+                        </label>
+<input class="form-input" id="customerPhone" placeholder="012-345 6789" required="" type="text"/>
+</div>
+<div>
+<label class="form-label">
+                            IC / Passport Number
+                        </label>
+<input class="form-input" id="customerIdentity" placeholder="IC or passport number" type="text"/>
+</div>
+<div>
+<label class="form-label">
+                            Driving Licence Number
+                        </label>
+<input class="form-input" id="customerLicence" placeholder="Licence number" type="text"/>
+</div>
+<div>
+<label class="form-label">
+                            Customer Status
+                        </label>
+<select class="form-input" id="customerStatus">
+<option value="active">
+                                Active
+                            </option>
+<option value="inactive">
+                                Inactive
+                            </option>
+</select>
+</div>
+</div>
+<div class="mt-5">
+<label class="form-label">
+                        Address
+                    </label>
+<textarea class="form-input resize-none" id="customerAddress" placeholder="Customer address" rows="3"></textarea>
+</div>
+<div class="mt-5">
+<label class="form-label">
+                        Notes
+                    </label>
+<textarea class="form-input resize-none" id="customerNotes" placeholder="Optional customer notes" rows="3"></textarea>
+</div>
+<div class="flex justify-end gap-3 mt-8 pt-6 border-t border-slate-200">
+<button class="px-5 py-2.5 border border-slate-200 rounded-lg font-medium hover:bg-slate-50" id="cancelCustomerBtn" type="button">
+
+                        Cancel
+
+                    </button>
+<button class="px-5 py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700" type="submit">
+
+                        Save Customer
+
+                    </button>
+</div>
+</form>
+</div>
+</div>
+<script src="../js/config/store.js"></script>
+<script src="../js/guards/admin-guard.js"> </script>
+<script src="../js/customers.js"></script>
+</body>
+</html>

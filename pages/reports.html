@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RentGo | Reports</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<link href="../css/custom.css" rel="stylesheet"/>
+</head>
+<body class="rg-theme rg-admin bg-slate-50 text-slate-800">
+<div class="min-h-screen flex">
+<!-- SIDEBAR -->
+<aside class="w-64 bg-slate-950 text-white fixed inset-y-0 left-0 hidden lg:flex flex-col">
+<div class="h-20 px-6 flex items-center border-b border-slate-800">
+<div class="flex items-center gap-3">
+<div class="rg-brand-mark w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+<i class="fa-solid fa-car-side"></i>
+</div>
+<div>
+<h1 class="rg-brand-name font-bold text-lg">
+                            RentGo
+                        </h1>
+<p class="text-xs text-slate-400">
+                            Admin Portal
+                        </p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-4 py-6 space-y-1">
+<a class="sidebar-link" href="dashboard.html">
+<i class="fa-solid fa-chart-line w-5"></i>
+<span>Dashboard</span>
+</a>
+<a class="sidebar-link" href="cars.html">
+<i class="fa-solid fa-car w-5"></i>
+<span>Fleet</span>
+</a>
+<a class="sidebar-link" href="bookings.html">
+<i class="fa-regular fa-calendar-check w-5"></i>
+<span>Bookings</span>
+</a>
+<a class="sidebar-link" href="customers.html">
+<i class="fa-solid fa-users w-5"></i>
+<span>Customers</span>
+</a>
+<a class="sidebar-link" href="payments.html">
+<i class="fa-solid fa-credit-card w-5"></i>
+<span>Payments</span>
+</a>
+<a class="sidebar-link" href="maintenance.html">
+<i class="fa-solid fa-screwdriver-wrench w-5"></i>
+<span>Maintenance</span>
+</a>
+<a class="sidebar-link bg-blue-600 text-white" href="reports.html">
+<i class="fa-solid fa-chart-pie w-5"></i>
+<span>Reports</span>
+</a>
+
+</nav>
+<div class="px-4 pb-5">
+<button class="sidebar-link w-full text-left" data-logout="" type="button">
+<i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+<span>Logout</span>
+</button>
+</div>
+</aside>
+<!-- MAIN -->
+<div class="flex-1 lg:ml-64">
+<!-- TOPBAR -->
+<header class="h-20 bg-white border-b border-slate-200 px-6 lg:px-8 flex items-center justify-between sticky top-0 z-30">
+<div>
+<h2 class="font-bold text-xl text-slate-900">
+                        Reports
+                    </h2>
+<p class="text-sm text-slate-500">
+                        Business performance and operational analytics
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center">
+<i class="fa-regular fa-user"></i>
+</div>
+<div class="hidden sm:block">
+<p class="text-sm font-semibold" data-admin-name="">
+
+                            Administrator
+
+                        </p>
+<p class="text-xs text-slate-400">
+                            Administrator
+                        </p>
+</div>
+</div>
+</header>
+<!-- CONTENT -->
+<main class="p-6 lg:p-8">
+<!-- HEADER -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-7">
+<div>
+<h3 class="text-2xl font-bold text-slate-900">
+                            Business Reports
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Monitor revenue, bookings, fleet performance and maintenance.
+                        </p>
+</div>
+<div class="flex items-end gap-3">
+<div>
+<label class="form-label">
+                                Report Year
+                            </label>
+<select class="form-input min-w-[130px]" id="reportYear">
+</select>
+</div>
+<button class="px-4 py-3 border border-slate-200 bg-white rounded-lg text-sm font-semibold hover:bg-slate-50" id="printReportBtn" type="button">
+<i class="fa-solid fa-print mr-2"></i>
+
+                            Print
+
+                        </button>
+</div>
+</div>
+<!-- KPI CARDS -->
+<div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 mb-7">
+<!-- Revenue -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Total Revenue
+                                </p>
+<h4 class="dashboard-value" id="reportRevenue">
+
+                                    RM 0.00
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2" id="reportRevenueYear">
+
+                                    -
+
+                                </p>
+</div>
+<div class="dashboard-icon bg-emerald-50 text-emerald-600">
+<i class="fa-solid fa-wallet"></i>
+</div>
+</div>
+</div>
+<!-- Booking -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Total Bookings
+                                </p>
+<h4 class="dashboard-value" id="reportBookings">
+
+                                    0
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2">
+                                    Booking requests
+                                </p>
+</div>
+<div class="dashboard-icon bg-blue-50 text-blue-600">
+<i class="fa-regular fa-calendar-check"></i>
+</div>
+</div>
+</div>
+<!-- Fleet Utilisation -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Fleet Utilisation
+                                </p>
+<h4 class="dashboard-value" id="reportFleetUtilisation">
+
+                                    0%
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2" id="reportFleetUsed">
+
+                                    0 of 0 vehicles
+
+                                </p>
+</div>
+<div class="dashboard-icon bg-violet-50 text-violet-600">
+<i class="fa-solid fa-car"></i>
+</div>
+</div>
+</div>
+<!-- Maintenance Cost -->
+<div class="dashboard-card">
+<div class="flex items-center justify-between">
+<div>
+<p class="dashboard-label">
+                                    Maintenance Cost
+                                </p>
+<h4 class="dashboard-value" id="reportMaintenanceCost">
+
+                                    RM 0.00
+
+                                </h4>
+<p class="text-xs text-slate-400 mt-2">
+                                    Excluding cancelled records
+                                </p>
+</div>
+<div class="dashboard-icon bg-amber-50 text-amber-600">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
+</div>
+</div>
+</div>
+<!-- REVENUE CHART -->
+<div class="bg-white border border-slate-200 rounded-2xl p-6 mb-6">
+<div class="mb-6">
+<h3 class="font-bold text-lg text-slate-900">
+                            Monthly Revenue
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Revenue collected from paid transactions.
+                        </p>
+</div>
+<div class="h-80">
+<canvas id="revenueChart"></canvas>
+</div>
+</div>
+<!-- TWO CHARTS -->
+<div class="grid xl:grid-cols-2 gap-6 mb-6">
+<!-- BOOKING STATUS -->
+<div class="bg-white border border-slate-200 rounded-2xl p-6">
+<div class="mb-6">
+<h3 class="font-bold text-lg text-slate-900">
+                                Booking Status
+                            </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                Distribution of rental bookings.
+                            </p>
+</div>
+<div class="h-72">
+<canvas id="bookingStatusChart"></canvas>
+</div>
+</div>
+<!-- FLEET STATUS -->
+<div class="bg-white border border-slate-200 rounded-2xl p-6">
+<div class="mb-6">
+<h3 class="font-bold text-lg text-slate-900">
+                                Current Fleet Status
+                            </h3>
+<p class="text-sm text-slate-500 mt-1">
+                                Current availability across the RentGo fleet.
+                            </p>
+</div>
+<div class="h-72">
+<canvas id="fleetStatusChart"></canvas>
+</div>
+</div>
+</div>
+<!-- MAINTENANCE CHART -->
+<div class="bg-white border border-slate-200 rounded-2xl p-6 mb-6">
+<div class="mb-6">
+<h3 class="font-bold text-lg text-slate-900">
+                            Monthly Maintenance Cost
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Vehicle maintenance expenditure by month.
+                        </p>
+</div>
+<div class="h-72">
+<canvas id="maintenanceCostChart"></canvas>
+</div>
+</div>
+<!-- TOP VEHICLES -->
+<div class="bg-white border border-slate-200 rounded-2xl overflow-hidden">
+<div class="px-6 py-5 border-b border-slate-200">
+<h3 class="font-bold text-lg text-slate-900">
+                            Most Booked Vehicles
+                        </h3>
+<p class="text-sm text-slate-500 mt-1">
+                            Vehicles ranked by booking activity.
+                        </p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm">
+<thead class="bg-slate-50 border-b border-slate-200 text-slate-500">
+<tr>
+<th class="px-6 py-4 text-left">
+                                        Rank
+                                    </th>
+<th class="px-6 py-4 text-left">
+                                        Vehicle
+                                    </th>
+<th class="px-6 py-4 text-left">
+                                        Plate Number
+                                    </th>
+<th class="px-6 py-4 text-left">
+                                        Bookings
+                                    </th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100" id="topVehicleTable">
+<tr>
+<td class="px-6 py-10 text-center text-slate-500" colspan="4">
+
+                                        Loading report...
+
+                                    </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+if (window.Chart) {
+    Chart.defaults.color = "#b5b5b5";
+    Chart.defaults.borderColor = "rgba(255,255,255,0.10)";
+}
+</script>
+<!-- Admin Protection -->
+<script src="../js/config/store.js"></script>
+<script src="../js/guards/admin-guard.js">
+</script>
+<!-- Reports -->
+<script src="../js/reports.js">
+</script>
+</body>
+</html>
